@@ -37,7 +37,9 @@
             "name": "进入火影",
             "entry": "start_up",
             "option": [
-                "账号属性"
+                "账号属性",
+                "设置启动超时时间",
+                "启动超时后行为"
             ],
             "default_check": true
         },
@@ -195,8 +197,7 @@
         },
         {
             "name": "关闭火影手游APP",
-            "entry": "exit_naruto",
-            "default_check": true
+            "entry": "exit_naruto"
         },
         {
             "name": "要塞(beta)",
@@ -285,6 +286,43 @@
                 {
                     "name": "苹果",
                     "pipeline_override": {}
+                }
+            ]
+        },
+        "设置启动超时时间": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "30S",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "45S",
+                    "pipeline_override": {
+                        "start_naruto": {
+                            "timeout": 45000
+                        }
+                    }
+                }
+            ],
+            "description": "超时时间计时从游戏启动到腾讯游戏界面结束,所以不用担心时间太短会反复重启"
+        },
+        "启动超时后行为": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "启动火影",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "重启火影",
+                    "pipeline_override": {
+                        "start_naruto": {
+                            "on_error": [
+                                "restart_naruto"
+                            ]
+                        }
+                    }
                 }
             ]
         },
@@ -1179,10 +1217,6 @@
             "type": "switch",
             "cases": [
                 {
-                    "name": "No",
-                    "pipeline_override": {}
-                },
-                {
                     "name": "Yes",
                     "pipeline_override": {
                         "rich_room_combo": {
@@ -1270,6 +1304,10 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {}
                 }
             ]
         },
