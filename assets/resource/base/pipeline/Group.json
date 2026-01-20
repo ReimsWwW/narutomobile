@@ -47,7 +47,8 @@
             "group_gameplay_done",
             "no_group",
             "[JumpBack]group_entry",
-            "[JumpBack]back_main_screen"
+            "[JumpBack]back_main_screen",
+            "[JumpBack]ninjia_guide_to_funtion_retry"
         ],
         "post_delay": 1500,
         "focus": "[color:DeepSkyBlue]组织主界面入口[/color]"

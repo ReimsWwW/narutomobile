@@ -444,6 +444,21 @@
     "post_wait_freezes": 200,
     "focus": "[color:darkgray]游戏等级提升[/color]"
   },
+  "ninjia_guide_to_funtion_retry": {
+    "recognition": "OCR",
+    "expected": "即刻",
+    "roi": [
+      588,
+      330,
+      691,
+      389
+    ],
+    "action": "Click",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "post_wait_freezes": 200,
+    "focus": "[color:darkgray]忍界指引重试进入功能[/color]"
+  },
   "unknow_error": {
     "action": "StopTask",
     "focus": "[color:tomato]未知原因导致卡死。[/color]"
