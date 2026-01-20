@@ -2,9 +2,12 @@
     "leaderboard": {
         "next": [
             "ninjia_guide_to_leaderboard",
-            "[JumpBack]open_ninjia_guide",
+            "[JumpBack]open_ninjia_guide"
+        ],
+        "on_error": [
             "[JumpBack]back_main_screen"
         ],
+        "timeout": 2000,
         "focus": "[color:DeepSkyBlue]进入排行榜子任务[/color]"
     },
     "ninjia_guide_to_leaderboard": {

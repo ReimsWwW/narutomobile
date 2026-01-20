@@ -2,9 +2,12 @@
     "group": {
         "next": [
             "group_entry",
-            "[JumpBack]open_ninjia_guide",
+            "[JumpBack]open_ninjia_guide"
+        ],
+        "on_error": [
             "[JumpBack]back_main_screen"
         ],
+        "timeout": 2000,
         "focus": "[color:DeepSkyBlue]进入组织子任务[/color]"
     },
     "group_entry": {
@@ -46,10 +49,12 @@
             "group_gameplay_undone",
             "group_gameplay_done",
             "no_group",
-            "[JumpBack]group_entry",
-            "[JumpBack]back_main_screen",
             "[JumpBack]ninjia_guide_to_funtion_retry"
         ],
+        "on_error": [
+            "group"
+        ],
+        "timeout": 3000,
         "post_delay": 1500,
         "focus": "[color:DeepSkyBlue]组织主界面入口[/color]"
     },
@@ -210,6 +215,21 @@
             "Group/confirm_group_pray.png"
         ],
         "action": "Click",
+        "next": [
+            "check_confirm_copper_group_pray",
+            "confirm_copper_group_pray"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]签到已完成[/color]"
+    },
+    "check_confirm_copper_group_pray": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Group/confirm_copper_pray_done.png",
+            "Group/confirm_group_pray.png"
+        ],
+        "inverse": true,
         "next": [
             "check_no_yesterday_award",
             "[JumpBack]yesterday_award_entry"
