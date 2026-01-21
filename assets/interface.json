@@ -225,6 +225,7 @@
             "entry": "rebel_ninja",
             "option": [
                 "叛忍敌人等级",
+                "叛忍只显示自己",
                 "叛忍难度",
                 "叛忍开双倍",
                 "叛忍二级密码"
@@ -1131,7 +1132,8 @@
                     "pipeline_override": {
                         "sky_ground_battlefield_selection": {
                             "next": [
-                                "sky_battlefield"
+                                "sky_battlefield",
+                                "sky_ground_settlement"
                             ]
                         }
                     }
@@ -1141,7 +1143,8 @@
                     "pipeline_override": {
                         "sky_ground_battlefield_selection": {
                             "next": [
-                                "ground_battlefield"
+                                "ground_battlefield",
+                                "sky_ground_settlement"
                             ]
                         }
                     }
@@ -1205,7 +1208,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "sky_ground_to_award_column": {
+                        "sky_ground_to_fight_column": {
                             "enabled": false
                         }
                     }
@@ -1387,6 +1390,24 @@
                                 "rebel_ninja_low_enemy",
                                 "[JumpBack]rebel_ninja_find_enemy"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "叛忍只显示自己": {
+            "description": "活跃组织使用,还在测试",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "rebel_ninja_only_me": {
+                            "enabled": true
                         }
                     }
                 }

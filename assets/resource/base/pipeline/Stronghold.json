@@ -2,27 +2,60 @@
     "stronghold": {
         "next": [
             "stronghold_entry",
+            "[JumpBack]open_ninjia_guide",
             "stronghold_in_stronghold",
-            "stronghold_in_map",
+            "stronghold_in_map"
+        ],
+        "on_error": [
             "[JumpBack]back_main_screen"
         ],
+        "timeout": 1500,
         "focus": "[color:DeepSkyBlue]进入要塞子任务[/color]"
     },
     "stronghold_entry": {
-        "recognition": "TemplateMatch",
-        "template": "Startup/main_green_masked.png",
-        "green_mask": true,
+        "recognition": "Or",
+        "any_of": [
+            {
+                "sub_name": "mission_label",
+                "recognition": "OCR",
+                "expected": [
+                    "任务"
+                ],
+                "roi": [
+                    968,
+                    68,
+                    307,
+                    100
+                ]
+            },
+            {
+                "sub_name": "activity_count_down",
+                "recognition": "OCR",
+                "expected": [
+                    "倒计时"
+                ],
+                "roi": [
+                    400,
+                    0,
+                    350,
+                    135
+                ]
+            }
+        ],
         "action": "Custom",
-        "custom_action": "GoIntoEntry",
+        "custom_action": "GoIntoEntryByGuide",
         "custom_action_param": {
-            "template": "home/组织"
+            "entry_name": "组织"
         },
         "next": [
             "stronghold_gameplay",
             "no_group",
-            "[JumpBack]stronghold_entry",
-            "[JumpBack]back_main_screen"
+            "[JumpBack]stronghold_entry"
         ],
+        "on_error": [
+            "stronghold"
+        ],
+        "timeout": 3000,
         "post_delay": 1500,
         "focus": "[color:DeepSkyBlue]组织主界面入口[/color]"
     },
@@ -69,9 +102,11 @@
             40,
             -5
         ],
+        "max_hit": 5,
         "next": [
             "stronghold_in_map",
-            "[JumpBack]stronghold_mode"
+            "[JumpBack]stronghold_mode",
+            "back_main_screen_and_stop"
         ],
         "post_wait_freezes": 400,
         "focus": "[color:DeepSkyBlue]进入要塞[/color]"
