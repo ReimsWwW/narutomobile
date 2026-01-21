@@ -82,9 +82,11 @@
             64
         ],
         "action": "Click",
+        "method": 10001,
         "next": [
             "use_energy_finish_1",
             "use_energy_not_enough_sign",
+            "use_energy_keep_sweep",
             "use_energy_finish",
             "[JumpBack]use_energy_ez_sweep",
             "retry_failed"
@@ -92,6 +94,29 @@
         "max_hit": 5,
         "post_wait_freezes": 500,
         "focus": "[color:DeepSkyBlue]确定便捷扫荡[/color]"
+    },
+    "use_energy_keep_sweep": {
+        "recognition": "OCR",
+        "expected": [
+            "继续",
+            "扫荡"
+        ],
+        "roi": [
+            356,
+            372,
+            340,
+            170
+        ],
+        "action": "Click",
+        "next": [
+            "use_energy_keep_sweep",
+            "use_energy_finish_1",
+            "use_energy_not_enough_sign",
+            "use_energy_finish",
+            "use_energy_ez_sweep",
+            "retry_failed"
+        ],
+        "focus": "[color:DeepSkyBlue]继续扫荡[/color]"
     },
     "use_energy_not_enough_sign": {
         "recognition": "TemplateMatch",

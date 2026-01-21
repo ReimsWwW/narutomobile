@@ -70,6 +70,9 @@
         {
             "name": "每日分享",
             "entry": "share",
+            "option": [
+                "分享后直接返回游戏"
+            ],
             "default_check": true
         },
         {
@@ -143,6 +146,7 @@
             "option": [
                 "领取体验卡宝箱",
                 "是否领取奖励",
+                "分享后直接返回游戏",
                 "宝匣挑战"
             ],
             "description": "[size:15][color:tomato]开启后会领取忍法帖升级的全部奖励，需要攒体验卡的不要用！[/color][/size]",
@@ -220,6 +224,7 @@
             "entry": "rebel_ninja",
             "option": [
                 "叛忍敌人等级",
+                "叛忍只显示自己",
                 "叛忍难度",
                 "叛忍开双倍",
                 "叛忍二级密码"
@@ -232,16 +237,17 @@
             "option": [
                 "冒险副本一直推关"
             ],
-            "description": "开一直推关可能会在开荒时因为功能更新卡住"
+            "description": "开一直推关可能会在开荒时因为功能更新卡住,忍者不要特效太多的"
         },
         {
             "name": "精英副本",
             "entry": "elite_instance",
-            "description": "不是体力刷碎片的功能,这个用来开荒的"
+            "description": "不是体力刷碎片的功能,这个用来开荒的,忍者不要特效太多的"
         },
         {
             "name": "修罗副本(beta)",
-            "entry": "asura_instance"
+            "entry": "asura_instance",
+            "description": "忍者不要特效太多的"
         },
         {
             "name": "更多玩法(beta)",
@@ -774,7 +780,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "secret_realm_flip_accessory_card": {
+                        "secret_realm_accessory_card": {
                             "enabled": false
                         }
                     }
@@ -799,7 +805,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "secret_realm_flip_gear_card": {
+                        "secret_realm_gear_card": {
                             "enabled": false
                         }
                     }
@@ -1097,7 +1103,8 @@
                     "pipeline_override": {
                         "sky_ground_battlefield_selection": {
                             "next": [
-                                "sky_battlefield"
+                                "sky_battlefield",
+                                "sky_ground_settlement"
                             ]
                         }
                     }
@@ -1107,7 +1114,8 @@
                     "pipeline_override": {
                         "sky_ground_battlefield_selection": {
                             "next": [
-                                "ground_battlefield"
+                                "ground_battlefield",
+                                "sky_ground_settlement"
                             ]
                         }
                     }
@@ -1171,7 +1179,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "sky_ground_to_award_column": {
+                        "sky_ground_to_fight_column": {
                             "enabled": false
                         }
                     }
@@ -1358,6 +1366,24 @@
                 }
             ]
         },
+        "叛忍只显示自己": {
+            "description": "活跃组织使用,还在测试",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "rebel_ninja_only_me": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
         "叛忍二级密码": {
             "type": "input",
             "inputs": [
@@ -1420,6 +1446,24 @@
                                 "give_energy_account_friend",
                                 "energy_entry"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "分享后直接返回游戏": {
+            "description": "开启后不会关闭社交软件而是直接返回火影,这个选项也会影响忍法帖的分享",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "share_back_to_natuto": {
+                            "enabled": true
                         }
                     }
                 }

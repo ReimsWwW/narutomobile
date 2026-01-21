@@ -1,10 +1,15 @@
 {
     "rebel_ninja": {
         "next": [
+            "rebel_ninja_only_me",
+            "rebel_ninja_in_battlefield",
             "goto_rebel_ninja_by_guide",
-            "[JumpBack]open_ninjia_guide",
+            "[JumpBack]open_ninjia_guide"
+        ],
+        "on_error": [
             "[JumpBack]back_main_screen"
         ],
+        "timeout": 1500,
         "focus": "[color:DeepSkyBlue]进入叛忍来袭子任务[/color]"
     },
     "goto_rebel_ninja_by_guide": {
@@ -20,6 +25,10 @@
             "no_group",
             "goto_rebel_ninja_by_guide"
         ],
+        "on_error": [
+            "rebel_ninja"
+        ],
+        "timeout": 3000,
         "post_delay": 1500,
         "focus": "[color:DeepSkyBlue]组织主界面入口[/color]"
     },
@@ -190,6 +199,7 @@
         "action": "Click",
         "next": [
             "rebel_ninja_confirm_nijia",
+            "rebel_ninja_only_me",
             "rebel_ninja_in_battlefield"
         ],
         "post_delay": 300
@@ -207,6 +217,7 @@
         ],
         "action": "Click",
         "next": [
+            "rebel_ninja_only_me",
             "rebel_ninja_in_battlefield",
             "[JumpBack]rebel_ninja_confirm_nijia"
         ],
@@ -386,7 +397,8 @@
         "action": "Click",
         "next": [
             "rebel_ninja_secondary_password",
-            "[JumpBack]rebel_ninja_confirm_open"
+            "[JumpBack]rebel_ninja_confirm_open",
+            "rebel_ninja_summon_member"
         ],
         "post_delay": 300
     },
@@ -481,6 +493,7 @@
         "action": "Click",
         "next": [
             "rebel_ninja_group_to_rebel_ninja",
+            "rebel_ninja",
             "[JumpBack]rebel_ninja_without_confirm_secondary_password"
         ],
         "post_delay": 300
@@ -519,6 +532,70 @@
             "[JumpBack]rebel_ninja_find_enemy"
         ]
     },
+    "rebel_ninja_only_me": {
+        "recognition": "TemplateMatch",
+        "template": "Rebel_ninja/show_set.png",
+        "roi": [
+            0,
+            81,
+            224,
+            219
+        ],
+        "method": 10001,
+        "action": "Click",
+        "max_hit": 1,
+        "enabled": false,
+        "green_mask": true,
+        "next": [
+            "rebel_ninja_is_only_me",
+            "rebel_ninja_set_only_me"
+        ]
+    },
+    "rebel_ninja_set_only_me": {
+        "recognition": "TemplateMatch",
+        "template": "Rebel_ninja/show_not_select.png",
+        "roi": [
+            456,
+            131,
+            298,
+            113
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "next": [
+            "rebel_ninja_only_me_quit"
+        ]
+    },
+    "rebel_ninja_is_only_me": {
+        "recognition": "TemplateMatch",
+        "template": "Rebel_ninja/show_select.png",
+        "roi": [
+            456,
+            131,
+            298,
+            113
+        ],
+        "order_by": "Vertical",
+        "next": [
+            "rebel_ninja_only_me_quit"
+        ]
+    },
+    "rebel_ninja_only_me_quit": {
+        "recognition": "TemplateMatch",
+        "template": "Rebel_ninja/show_set_quit.png",
+        "roi": [
+            0,
+            81,
+            224,
+            219
+        ],
+        "method": 10001,
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "rebel_ninja_in_battlefield"
+        ]
+    },
     "rebel_ninja_find_enemy": {
         "recognition": "OCR",
         "expected": [
@@ -553,10 +630,10 @@
         ],
         "action": "Click",
         "roi": [
-            328,
-            14,
-            951,
-            705
+            333,
+            113,
+            806,
+            505
         ],
         "threshold": [
             0.9
@@ -574,10 +651,10 @@
         ],
         "action": "Click",
         "roi": [
-            328,
-            14,
-            951,
-            705
+            333,
+            113,
+            806,
+            505
         ],
         "threshold": [
             0.9
@@ -594,10 +671,10 @@
             "Rebel_ninja/high.png"
         ],
         "roi": [
-            328,
-            14,
-            951,
-            705
+            333,
+            113,
+            806,
+            505
         ],
         "threshold": [
             0.9
