@@ -13,15 +13,14 @@
         "template": "Startup/main_green_masked.png",
         "green_mask": true,
         "action": "Custom",
-        "custom_action": "GoIntoEntry",
+        "custom_action": "GoIntoEntryByGuide",
         "custom_action_param": {
-            "template": "home/组织"
+            "entry_name": "组织"
         },
         "next": [
             "stronghold_gameplay",
             "no_group",
-            "[JumpBack]stronghold_entry",
-            "[JumpBack]back_main_screen"
+            "stronghold_entry"
         ],
         "post_delay": 1500,
         "focus": "[color:DeepSkyBlue]组织主界面入口[/color]"

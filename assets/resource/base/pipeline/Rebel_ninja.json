@@ -1,26 +1,24 @@
 {
     "rebel_ninja": {
         "next": [
-            "rebel_ninja_in_battlefield",
-            "rebel_ninja_entry",
+            "goto_rebel_ninja_by_guide",
+            "[JumpBack]open_ninjia_guide",
             "[JumpBack]back_main_screen"
         ],
         "focus": "[color:DeepSkyBlue]进入叛忍来袭子任务[/color]"
     },
-    "rebel_ninja_entry": {
-        "recognition": "TemplateMatch",
-        "template": "Startup/main_green_masked.png",
-        "green_mask": true,
+    "goto_rebel_ninja_by_guide": {
+        "recognition": "Custom",
+        "custom_recognition": "IsInNinjiaGuide",
         "action": "Custom",
-        "custom_action": "GoIntoEntry",
+        "custom_action": "GoIntoEntryByGuide",
         "custom_action_param": {
-            "template": "home/组织"
+            "entry_name": "组织"
         },
         "next": [
             "rebel_ninja_gameplay",
             "no_group",
-            "[JumpBack]rebel_ninja_entry",
-            "[JumpBack]back_main_screen"
+            "goto_rebel_ninja_by_guide"
         ],
         "post_delay": 1500,
         "focus": "[color:DeepSkyBlue]组织主界面入口[/color]"
