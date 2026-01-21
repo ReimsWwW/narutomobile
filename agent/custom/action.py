@@ -2,7 +2,6 @@ import json
 from time import sleep
 from typing import Optional, Tuple
 
-
 from maa.agent.agent_server import AgentServer, TaskDetail
 from maa.custom_action import CustomAction
 from maa.context import Context
@@ -311,7 +310,16 @@ class IsCounterOverflow(CustomAction):
         argv: CustomAction.RunArg,
     ) -> CustomAction.RunResult:
         param = json.loads(argv.custom_action_param)
-        max_hit = param.get("max_hit", 0)
+        max_hit = param.get("max_hit", "0")
+        if isinstance(max_hit, int):
+            max_hit = str(max_hit)
+
+        if not max_hit.isdecimal():
+            logger.error(f"max_hit 参数填写错误: {max_hit}")
+            context.tasker.post_stop()
+            return CustomAction.RunResult(success=False)
+        else:
+            max_hit = int(max_hit)
 
         global count
         if count is None:
