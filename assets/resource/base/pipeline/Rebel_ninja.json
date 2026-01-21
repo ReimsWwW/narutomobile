@@ -568,6 +568,7 @@
             224,
             219
         ],
+        "method": 10001,
         "action": "Click",
         "max_hit": 1,
         "enabled": false,
@@ -615,6 +616,7 @@
             224,
             219
         ],
+        "method": 10001,
         "action": "Click",
         "green_mask": true,
         "next": [
