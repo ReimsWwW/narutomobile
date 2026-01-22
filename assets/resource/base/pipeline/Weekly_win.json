@@ -12,7 +12,7 @@
         "custom_recognition": "IsInNinjiaGuide",
         "action": "Custom",
         "custom_action": "GoIntoEntryByGuide",
-        "custom_recognition_param": {
+        "custom_action_param": {
             "entry_name": "忍术对战"
         },
         "post_delay": 1500,

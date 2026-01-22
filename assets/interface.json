@@ -338,7 +338,7 @@
                     "name": "No",
                     "pipeline_override": {
                         "goto_duel_field": {
-                            "custom_recognition_param": {
+                            "custom_action_param": {
                                 "entry_name": "忍术对战"
                             },
                             "focus": "[color:DeepSkyBlue]进入段位赛[/color]"
@@ -349,7 +349,7 @@
                     "name": "Yes",
                     "pipeline_override": {
                         "goto_duel_field": {
-                            "custom_recognition_param": {
+                            "custom_action_param": {
                                 "entry_name": "段位赛"
                             },
                             "focus": "[color:DeepSkyBlue]进入段位赛[/color]"
