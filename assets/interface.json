@@ -598,7 +598,7 @@
                     "description": "打赢输入次数,最大999",
                     "pipeline_type": "int",
                     "default": "999",
-                    "verify": "^(0|[1-9]\\d{0,2})$"
+                    "verify": "^[1-9]\\d{0,2}$"
                 }
             ],
             "pipeline_override": {
@@ -759,10 +759,10 @@
             "inputs": [
                 {
                     "name": "秘境胜利次数",
-                    "description": "打赢输入次数，最大999",
+                    "description": "打赢输入次数,最大999",
                     "pipeline_type": "int",
-                    "default": "0",
-                    "verify": "^(0|[1-9]\\d{0,2})$"
+                    "default": "1",
+                    "verify": "^[1-9]\\d{0,2}$"
                 }
             ],
             "pipeline_override": {
