@@ -841,7 +841,7 @@ class FindAccessoryFlipTicket(CustomRecognition):
     """
 
     # 饰品翻牌卷ROI
-    ACCESSORY_TICKET_ROI = [586, 589, 91, 64]
+    ACCESSORY_TICKET_ROI = [550, 481, 171, 238]
 
     def analyze(
         self, context: Context, argv: CustomRecognition.AnalyzeArg

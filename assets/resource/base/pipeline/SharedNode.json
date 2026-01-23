@@ -200,6 +200,10 @@
       324,
       160
     ],
+    "next": [
+      "im_come_back_award"
+    ],
+    "timeout": 3000,
     "focus": "[color:DeepSkyBlue]点击我回来了[/color]"
   },
   "im_come_back_award": {

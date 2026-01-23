@@ -3,6 +3,7 @@
         "next": [
             "goto_duel_field",
             "[JumpBack]open_ninjia_guide",
+            "weekly_win_match_fighting",
             "[JumpBack]back_main_screen"
         ],
         "focus": "[color:DeepSkyBlue]开始周胜任务[/color]"
@@ -122,9 +123,9 @@
         ],
         "green_mask": true,
         "next": [
+            "[JumpBack]winner_decided",
             "[JumpBack]click_All_skill",
-            "battle_tips",
-            "[JumpBack]winner_decided"
+            "battle_tips"
         ],
         "timeout": 3000,
         "pre_delay": 0,
