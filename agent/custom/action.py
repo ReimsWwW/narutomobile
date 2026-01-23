@@ -16,6 +16,7 @@ from .utils import (
     save_screenshot,
     validate_config,
     validate_mfa,
+    wait_for_freezes,
 )
 
 
@@ -216,8 +217,8 @@ class GoIntoEntryByGuide(CustomAction):
                 return CustomAction.RunResult(success=False)
 
             click(context, *box)
-            sleep(0.5)
 
+        wait_for_freezes(context, 300)
         if context.tasker.stopping:
             logger.info("任务停止，提前退出")
             return CustomAction.RunResult(success=False)

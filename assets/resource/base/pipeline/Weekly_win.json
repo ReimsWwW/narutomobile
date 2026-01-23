@@ -123,11 +123,11 @@
         ],
         "green_mask": true,
         "next": [
-            "[JumpBack]winner_decided",
             "[JumpBack]click_All_skill",
+            "[JumpBack]winner_decided",
             "battle_tips"
         ],
-        "timeout": 3000,
+        "timeout": 5000,
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]开始战斗[/color]"
@@ -147,7 +147,9 @@
         "next": [
             "battle_end",
             "weekly_win_substitution"
-        ]
+        ],
+        "$doc": "有一部分忍者会复活，这时候可能会直接进战斗，所以提前JumpBack",
+        "timeout": 10000
     },
     "battle_end": {
         "recognition": "OCR",
@@ -186,7 +188,7 @@
         "green_mask": true,
         "action": "Click",
         "threshold": 0.8,
-        "post_delay": 500,
+        "post_wait_freezes": 500,
         "next": [
             "weekly_win_success",
             "[JumpBack]weekly_win_rank_up",
@@ -317,10 +319,7 @@
             210,
             200
         ],
-        "action": "Swipe",
-        "duration": 50,
         "threshold": 0.9,
-        "post_delay": 3000,
         "focus": "[color:darkgray]准备进入战斗[/color]"
     },
     "battle_detail": {
@@ -354,7 +353,6 @@
             "[JumpBack]battle_tips",
             "[JumpBack]battle_again",
             "[JumpBack]weekly_win_substitution",
-            "[JumpBack]battle_end",
             "[JumpBack]go_to_war"
         ],
         "post_delay": 1000,
