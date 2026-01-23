@@ -2,28 +2,59 @@
     "sky_ground": {
         "next": [
             "sky_ground_entry",
-            "sky_ground_in_main",
+            "[JumpBack]open_ninjia_guide",
+            "sky_ground_in_main"
+        ],
+        "on_error": [
             "[JumpBack]back_main_screen"
         ],
+        "timeout": 1500,
         "focus": "[color:DeepSkyBlue]进入天地子任务[/color]"
     },
     "sky_ground_entry": {
-        "recognition": "TemplateMatch",
-        "template": "Startup/main_green_masked.png",
-        "green_mask": true,
+        "recognition": "Or",
+        "any_of": [
+            {
+                "sub_name": "mission_label",
+                "recognition": "OCR",
+                "expected": [
+                    "任务"
+                ],
+                "roi": [
+                    968,
+                    68,
+                    307,
+                    100
+                ]
+            },
+            {
+                "sub_name": "activity_count_down",
+                "recognition": "OCR",
+                "expected": [
+                    "倒计时"
+                ],
+                "roi": [
+                    400,
+                    0,
+                    350,
+                    135
+                ]
+            }
+        ],
         "action": "Custom",
-        "custom_action": "GoIntoEntry",
+        "custom_action": "GoIntoEntryByGuide",
         "custom_action_param": {
-            "template": [
-                "home/组织"
-            ]
+            "entry_name": "组织"
         },
         "next": [
             "sky_ground_gameplay",
             "no_group",
-            "[JumpBack]sky_ground_entry",
-            "[JumpBack]back_main_screen"
+            "sky_ground_entry"
         ],
+        "on_error": [
+            "sky_ground"
+        ],
+        "timeout": 3000,
         "post_delay": 1500,
         "focus": "[color:DeepSkyBlue]组织主界面入口[/color]"
     },
@@ -69,6 +100,7 @@
             913,
             224
         ],
+        "max_hit": 5,
         "action": "Click",
         "target_offset": [
             -10,
@@ -78,7 +110,8 @@
         ],
         "next": [
             "sky_ground_battlefield_selection",
-            "[JumpBack]sky_ground_mode"
+            "[JumpBack]sky_ground_mode",
+            "back_main_screen_and_stop"
         ],
         "post_wait_freezes": 400,
         "focus": "[color:DeepSkyBlue]进入天地模式[/color]"
@@ -124,10 +157,28 @@
             170
         ],
         "next": [
-            "sky_battlefield"
+            "sky_battlefield",
+            "sky_ground_settlement"
         ],
         "post_wait_freezes": 400,
         "focus": "[color:DeepSkyBlue]选择战场[/color]"
+    },
+    "sky_ground_settlement": {
+        "recognition": "OCR",
+        "expected": [
+            "下次开启"
+        ],
+        "roi": [
+            439,
+            609,
+            256,
+            110
+        ],
+        "next": [
+            "back_main_screen_and_stop"
+        ],
+        "post_wait_freezes": 400,
+        "focus": "[color:DeepSkyBlue]天地战场结束[/color]"
     },
     "sky_battlefield": {
         "recognition": "TemplateMatch",
@@ -142,6 +193,7 @@
         "next": [
             "sky_ground_confrim_battlefield_selection",
             "sky_ground_confirm_set",
+            "sky_ground_to_column",
             "[JumpBack]sky_battlefield"
         ],
         "post_wait_freezes": 400,
@@ -407,6 +459,7 @@
         "action": "Click",
         "next": [
             "sky_ground_end",
+            "sky_ground_group_encouragement",
             "[JumpBack]sky_ground_to_award_column",
             "[JumpBack]sky_ground_on_column",
             "sky_ground_to_column",
@@ -415,9 +468,9 @@
             "right_swipe_for_empty_column",
             "left_swipe_for_empty_column",
             "up_swipe_for_empty_column",
-            "sky_ground_in_main",
-            "[JumpBack]sleep_500ms"
+            "sky_ground_in_main"
         ],
+        "timeout": 60000,
         "focus": "[color:DeepSkyBlue]前往空柱子[/color]"
     },
     "sky_ground_to_award_column": {
@@ -441,6 +494,12 @@
         "recognition": "OCR",
         "expected": [
             "MaaAutoNaruto"
+        ],
+        "roi": [
+            298,
+            80,
+            978,
+            551
         ],
         "post_delay": 5000
     },
@@ -622,6 +681,7 @@
         "post_delay": 2000,
         "next": [
             "sky_ground_end",
+            "sky_ground_group_encouragement",
             "[JumpBack]sky_ground_to_award_column",
             "sky_ground_to_column",
             "[JumpBack]sky_ground_to_fight_column",

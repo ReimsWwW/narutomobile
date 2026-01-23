@@ -70,6 +70,9 @@
         {
             "name": "每日分享",
             "entry": "share",
+            "option": [
+                "分享后直接返回游戏"
+            ],
             "default_check": true
         },
         {
@@ -143,6 +146,7 @@
             "option": [
                 "领取体验卡宝箱",
                 "是否领取奖励",
+                "分享后直接返回游戏",
                 "宝匣挑战"
             ],
             "description": "[size:15][color:tomato]开启后会领取忍法帖升级的全部奖励，需要攒体验卡的不要用！[/color][/size]",
@@ -180,7 +184,6 @@
             "name": "秘境(beta)",
             "entry": "secret_realm",
             "option": [
-                "秘境从奖励中心进入",
                 "秘境赢几次",
                 "秘境翻饰品牌",
                 "秘境翻忍具牌",
@@ -221,6 +224,7 @@
             "entry": "rebel_ninja",
             "option": [
                 "叛忍敌人等级",
+                "叛忍只显示自己",
                 "叛忍难度",
                 "叛忍开双倍",
                 "叛忍二级密码"
@@ -233,16 +237,17 @@
             "option": [
                 "冒险副本一直推关"
             ],
-            "description": "开一直推关可能会在开荒时因为功能更新卡住"
+            "description": "开一直推关可能会在开荒时因为功能更新卡住,忍者不要特效太多的"
         },
         {
             "name": "精英副本",
             "entry": "elite_instance",
-            "description": "不是体力刷碎片的功能,这个用来开荒的"
+            "description": "不是体力刷碎片的功能,这个用来开荒的,忍者不要特效太多的"
         },
         {
             "name": "修罗副本(beta)",
-            "entry": "asura_instance"
+            "entry": "asura_instance",
+            "description": "忍者不要特效太多的"
         },
         {
             "name": "更多玩法(beta)",
@@ -270,7 +275,8 @@
             "entry": "debug",
             "description": "用于调试，<b>日常使用请勿开启！</b>",
             "option": [
-                "display pointer location"
+                "display_pointer_location",
+                "display_touch"
             ]
         }
     ],
@@ -331,32 +337,23 @@
             "cases": [
                 {
                     "name": "No",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "goto_duel_field": {
+                            "custom_action_param": {
+                                "entry_name": "忍术对战"
+                            },
+                            "focus": "[color:DeepSkyBlue]进入段位赛[/color]"
+                        }
+                    }
                 },
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "weekly_win_in_duel_field": {
-                            "next": [
-                                "weekly_win_rank",
-                                "[JumpBack]weekly_win_mouthly_award",
-                                "[JumpBack]weekly_win_mouthly_reset_award",
-                                "[JumpBack]weekly_win_weekly_award",
-                                "[JumpBack]weekly_win_confirm_weekly_award",
-                                "[JumpBack]weekly_win_entry",
-                                "[JumpBack]weekly_win"
-                            ]
-                        },
-                        "weekly_win_entry": {
-                            "next": [
-                                "weekly_win_rank",
-                                "[JumpBack]weekly_win_mouthly_award",
-                                "[JumpBack]weekly_win_mouthly_reset_award",
-                                "[JumpBack]weekly_win_weekly_award",
-                                "[JumpBack]weekly_win_confirm_weekly_award",
-                                "[JumpBack]weekly_win_entry",
-                                "[JumpBack]weekly_win"
-                            ]
+                        "goto_duel_field": {
+                            "custom_action_param": {
+                                "entry_name": "段位赛"
+                            },
+                            "focus": "[color:DeepSkyBlue]进入段位赛[/color]"
                         }
                     }
                 }
@@ -372,15 +369,13 @@
                             "next": [
                                 "hundred_ninjia_confirm_selcet_ninjia",
                                 "[JumpBack]hundred_ninjia_selcet_ninjia",
-                                "hundred_ninjia_fight",
-                                "[JumpBack]sleep_500ms"
+                                "hundred_ninjia_fight"
                             ]
                         },
                         "hundred_ninjia_confirm_selcet_ninjia": {
                             "next": [
                                 "hundred_ninjia_fight",
-                                "[JumpBack]hundred_ninjia_selcet_ninjia",
-                                "[JumpBack]sleep_500ms"
+                                "[JumpBack]hundred_ninjia_selcet_ninjia"
                             ]
                         },
                         "hundred_ninjia_check_no_fight": {
@@ -600,16 +595,18 @@
             "description": "周胜胜利次数设置",
             "inputs": [
                 {
-                    "name": "周胜胜利次数减一",
-                    "description": "打赢输入次数+1次后结束,输入0的时候为打赢一次,最大999",
+                    "name": "周胜胜利次数",
+                    "description": "打赢输入次数,最大999",
                     "pipeline_type": "int",
                     "default": "999",
-                    "verify": "^(0|[1-9]\\d{0,2})$"
+                    "verify": "^[1-9]\\d{0,2}$"
                 }
             ],
             "pipeline_override": {
-                "go_to_war_agian": {
-                    "max_hit": "{周胜胜利次数减一}"
+                "go_to_war_again": {
+                    "custom_action_param": {
+                        "max_hit": "{周胜胜利次数}"
+                    }
                 }
             }
         },
@@ -619,9 +616,8 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "win_to_entry": {
+                        "weekly_win_stop": {
                             "next": [
-                                "go_to_war_agian",
                                 "weekly_win_duel_mission",
                                 "back_main_screen_and_stop"
                             ]
@@ -645,9 +641,8 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "win_to_entry": {
+                        "weekly_win_stop": {
                             "next": [
-                                "go_to_war_agian",
                                 "weekly_win_duel_mission",
                                 "back_main_screen_and_stop"
                             ]
@@ -689,7 +684,7 @@
                     "pipeline_override": {
                         "weekly_win": {
                             "next": [
-                                "weekly_win_in_center_enter",
+                                "go_to_war_again",
                                 "[JumpBack]award_center_enter",
                                 "[JumpBack]back_main_screen"
                             ]
@@ -757,42 +752,23 @@
                 }
             ]
         },
-        "秘境从奖励中心进入": {
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {
-                        "secret_realm": {
-                            "next": [
-                                "secret_realm_in_secret_realm",
-                                "secret_realm_in_center_enter",
-                                "[JumpBack]award_center_enter",
-                                "[JumpBack]back_main_screen"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "No"
-                }
-            ]
-        },
         "秘境赢几次": {
             "description": "秘境胜利次数设置",
             "type": "input",
             "inputs": [
                 {
-                    "name": "秘境胜利次数减一",
-                    "description": "打赢输入次数+1次后结束,输入0的时候为打赢一次,最大999",
+                    "name": "秘境胜利次数",
+                    "description": "打赢输入次数,最大999",
                     "pipeline_type": "int",
-                    "default": "0",
-                    "verify": "^(0|[1-9]\\d{0,2})$"
+                    "default": "1",
+                    "verify": "^[1-9]\\d{0,2}$"
                 }
             ],
             "pipeline_override": {
-                "secret_realm_celebreate": {
-                    "max_hit": "{秘境胜利次数减一}"
+                "secret_realm_check_overflow": {
+                    "custom_action_param": {
+                        "max_hit": "{秘境胜利次数}"
+                    }
                 }
             }
         },
@@ -803,7 +779,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "secret_realm_flip_accessory_card": {
+                        "secret_realm_accessory_card": {
                             "enabled": false
                         }
                     }
@@ -828,7 +804,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "secret_realm_flip_gear_card": {
+                        "secret_realm_gear_card": {
                             "enabled": false
                         }
                     }
@@ -859,15 +835,13 @@
                                 "[JumpBack]secret_realm_flip_accessory_card",
                                 "secret_realm_flip_gear_card",
                                 "secret_realm_celebreate",
-                                "secret_realm_last_celebreate",
                                 "[JumpBack]secret_realm_win"
                             ]
                         },
                         "secret_realm_flip_gear_card": {
                             "next": [
                                 "secret_realm_win_back_secret_realm",
-                                "secret_realm_celebreate",
-                                "secret_realm_last_celebreate"
+                                "secret_realm_celebreate"
                             ]
                         }
                     }
@@ -1128,7 +1102,8 @@
                     "pipeline_override": {
                         "sky_ground_battlefield_selection": {
                             "next": [
-                                "sky_battlefield"
+                                "sky_battlefield",
+                                "sky_ground_settlement"
                             ]
                         }
                     }
@@ -1138,7 +1113,8 @@
                     "pipeline_override": {
                         "sky_ground_battlefield_selection": {
                             "next": [
-                                "ground_battlefield"
+                                "ground_battlefield",
+                                "sky_ground_settlement"
                             ]
                         }
                     }
@@ -1202,7 +1178,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "sky_ground_to_award_column": {
+                        "sky_ground_to_fight_column": {
                             "enabled": false
                         }
                     }
@@ -1389,6 +1365,24 @@
                 }
             ]
         },
+        "叛忍只显示自己": {
+            "description": "活跃组织使用,还在测试",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "rebel_ninja_only_me": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
         "叛忍二级密码": {
             "type": "input",
             "inputs": [
@@ -1456,6 +1450,24 @@
                 }
             ]
         },
+        "分享后直接返回游戏": {
+            "description": "开启后不会关闭社交软件而是直接返回火影,这个选项也会影响忍法帖的分享",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "share_back_to_natuto": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
         "打新关卡": {
             "type": "switch",
             "default_case": "No",
@@ -1473,23 +1485,36 @@
                 }
             ]
         },
-        "display pointer location": {
+        "display_pointer_location": {
             "type": "switch",
-            "default_case": "Yes",
+            "default_case": "No",
+            "description": "<b>WARNING!</b> The position top bar may invalidate the close button for some windows.",
             "cases": [
                 {
-                    "name": "No",
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
                     "pipeline_override": {
-                        "close_touches": {
-                            "max_hit": 1
+                        "show_pointer_location": {
+                            "enabled": true
                         }
                     }
+                }
+            ]
+        },
+        "display_touch": {
+            "type": "switch",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "No"
                 },
                 {
                     "name": "Yes",
                     "pipeline_override": {
                         "show_touches": {
-                            "max_hit": 1
+                            "enabled": true
                         }
                     }
                 }

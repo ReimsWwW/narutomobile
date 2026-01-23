@@ -2,9 +2,12 @@
     "team_dash": {
         "next": [
             "team_dash_in_center_enter",
-            "[JumpBack]award_center_enter",
+            "[JumpBack]award_center_enter"
+        ],
+        "on_error": [
             "[JumpBack]back_main_screen"
         ],
+        "timeout": 2000,
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]进入小队突袭子任务[/color]"

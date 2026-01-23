@@ -42,7 +42,8 @@
             "entry_name": "修行之路"
         },
         "next": [
-            "train_road_entry"
+            "train_road_entry",
+            "[JumpBack]ninjia_guide_to_funtion_retry"
         ],
         "focus": "进入修行之路",
         "post_wait_freezes": 400
