@@ -170,8 +170,7 @@
                 "打排位",
                 "何时退出",
                 "领取周胜奖励",
-                "清周胜过期宝箱",
-                "周胜从奖励中心进入"
+                "清周胜过期宝箱"
             ],
             "description": "请在主页开始任务"
         },
@@ -604,7 +603,7 @@
             ],
             "pipeline_override": {
                 "go_to_war_again": {
-                    "custom_action_param": {
+                    "custom_recognition_param": {
                         "max_hit": "{周胜胜利次数}"
                     }
                 }
@@ -766,7 +765,7 @@
             ],
             "pipeline_override": {
                 "secret_realm_check_overflow": {
-                    "custom_action_param": {
+                    "custom_recognition_param": {
                         "max_hit": "{秘境胜利次数}"
                     }
                 }
@@ -832,8 +831,8 @@
                         "secret_realm_win": {
                             "next": [
                                 "secret_realm_flip_without_card",
-                                "[JumpBack]secret_realm_flip_accessory_card",
-                                "secret_realm_flip_gear_card",
+                                "[JumpBack]secret_realm_accessory_card",
+                                "secret_realm_gear_card",
                                 "secret_realm_celebreate",
                                 "[JumpBack]secret_realm_win"
                             ]
@@ -849,7 +848,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "secret_realm_flip_gear_card": {
+                        "secret_realm_gear_card": {
                             "enabled": false
                         }
                     }
