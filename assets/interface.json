@@ -603,7 +603,7 @@
             ],
             "pipeline_override": {
                 "go_to_war_again": {
-                    "custom_action_param": {
+                    "custom_recognition_param": {
                         "max_hit": "{周胜胜利次数}"
                     }
                 }
