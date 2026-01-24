@@ -66,7 +66,7 @@ class IsCounterOverflow(CustomRecognition):
             logger.debug(f"计数器溢出！最大值: {max_hit} 当前值: {now_count} ")
             logger.info("达到最大执行次数")
             return CustomRecognition.AnalyzeResult(box=None, detail={})
-
+        logger.debug(f"计数器状态： 最大值: {max_hit} 当前值: {now_count} ")
         return CustomRecognition.AnalyzeResult(box=Rect(0, 0, 1, 1), detail={})
 
 
