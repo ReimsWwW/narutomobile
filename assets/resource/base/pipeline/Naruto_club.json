@@ -1055,7 +1055,8 @@
         ],
         "action": "Click",
         "next": [
-            "confirm_club_second_award"
+            "confirm_club_second_award",
+            "club_second_award"
         ],
         "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]领取第二个奖励[/color]",
@@ -1076,7 +1077,8 @@
         "action": "Click",
         "next": [
             "roger_club_second_award",
-            "confirm_club_second_award"
+            "confirm_club_second_award",
+            "club_second_award_done"
         ],
         "timeout": 2000,
         "post_wait_freezes": 300,
