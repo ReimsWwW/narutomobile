@@ -1184,7 +1184,7 @@
             "club_third_award_done",
             "roger_club_third_award"
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 200,
         "focus": "[color:DeepSkyBlue]收到第三个奖励领取通知[/color]"
     },
     "club_third_award_done": {
