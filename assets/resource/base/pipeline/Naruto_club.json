@@ -1141,7 +1141,8 @@
         "max_hit": 3,
         "next": [
             "confirm_club_third_award",
-            "[JumpBack]club_third_award"
+            "[JumpBack]club_third_award",
+            "club_third_award_done"
         ],
         "timeout": 3000,
         "post_wait_freezes": 800,
@@ -1161,7 +1162,8 @@
         "action": "Click",
         "next": [
             "roger_club_third_award",
-            "confirm_club_third_award"
+            "confirm_club_third_award",
+            "club_third_award_done"
         ],
         "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]确认领取第三个奖励[/color]"
