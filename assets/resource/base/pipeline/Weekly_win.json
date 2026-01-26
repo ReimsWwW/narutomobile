@@ -814,7 +814,7 @@
         ],
         "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
     },
-    "weekly_win_ac_enter": {
+    "weekly_win_ac_entry": {
         "recognition": "TemplateMatch",
         "template": "SharedNode/award_center_entry.png",
         "roi": [
@@ -827,7 +827,7 @@
         "action": "Click",
         "next": [
             "weekly_win_in_center_enter",
-            "weekly_win_ac_enter"
+            "weekly_win_ac_entry"
         ],
         "pre_delay": 0,
         "post_delay": 0,

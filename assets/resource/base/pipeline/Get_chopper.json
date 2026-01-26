@@ -2,7 +2,7 @@
     "get_copper": {
         "next": [
             "get_copper_in_center_enter",
-            "get_copper_ac_enter",
+            "get_copper_ac_entry",
             "[JumpBack]back_main_screen"
         ],
         "focus": "[color:DeepSkyBlue]进入铜币招财子任务[/color]"
@@ -29,7 +29,7 @@
         ],
         "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
     },
-    "get_copper_ac_enter": {
+    "get_copper_ac_entry": {
         "recognition": "TemplateMatch",
         "template": "SharedNode/award_center_entry.png",
         "roi": [
@@ -42,7 +42,7 @@
         "action": "Click",
         "next": [
             "get_copper_in_center_enter",
-            "get_copper_ac_enter"
+            "get_copper_ac_entry"
         ],
         "pre_delay": 0,
         "post_delay": 0,

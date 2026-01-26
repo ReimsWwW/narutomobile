@@ -2,7 +2,7 @@
     "survival_challenge": {
         "next": [
             "survival_challenge_in_center_enter",
-            "survival_challenge_ac_enter",
+            "survival_challenge_ac_entry",
             "[JumpBack]back_main_screen"
         ]
     },
@@ -308,7 +308,7 @@
         ],
         "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
     },
-    "survival_challenge_ac_enter": {
+    "survival_challenge_ac_entry": {
         "recognition": "TemplateMatch",
         "template": "SharedNode/award_center_entry.png",
         "roi": [
@@ -321,7 +321,7 @@
         "action": "Click",
         "next": [
             "survival_challenge_in_center_enter",
-            "survival_challenge_ac_enter"
+            "survival_challenge_ac_entry"
         ],
         "pre_delay": 0,
         "post_delay": 0,

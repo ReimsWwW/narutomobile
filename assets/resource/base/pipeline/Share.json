@@ -2,7 +2,7 @@
     "share": {
         "next": [
             "share_in_center_enter",
-            "share_ac_enter",
+            "share_ac_entry",
             "[JumpBack]back_main_screen"
         ],
         "timeout": 1500,
@@ -32,7 +32,7 @@
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
     },
-    "share_ac_enter": {
+    "share_ac_entry": {
         "recognition": "TemplateMatch",
         "template": "SharedNode/award_center_entry.png",
         "roi": [
@@ -45,7 +45,7 @@
         "action": "Click",
         "next": [
             "share_in_center_enter",
-            "share_ac_enter"
+            "share_ac_entry"
         ],
         "pre_delay": 0,
         "post_delay": 0,

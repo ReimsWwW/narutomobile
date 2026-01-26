@@ -2,7 +2,7 @@
     "rich_room": {
         "next": [
             "rich_room_in_center_enter",
-            "rich_room_ac_enter",
+            "rich_room_ac_entry",
             "[JumpBack]back_main_screen"
         ],
         "focus": "[color:DeepSkyBlue]进入丰饶子任务[/color]"
@@ -29,7 +29,7 @@
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
     },
-    "rich_room_ac_enter": {
+    "rich_room_ac_entry": {
         "recognition": "TemplateMatch",
         "template": "SharedNode/award_center_entry.png",
         "roi": [
@@ -42,7 +42,7 @@
         "action": "Click",
         "next": [
             "rich_room_in_center_enter",
-            "rich_room_ac_enter"
+            "rich_room_ac_entry"
         ],
         "pre_delay": 0,
         "post_delay": 0,

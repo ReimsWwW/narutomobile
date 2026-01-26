@@ -93,6 +93,7 @@
             "entry": "point_race",
             "description": "领取当日奖励并尝试进行一次挑战。",
             "option": [
+                "积分赛低配优化",
                 "强制战斗"
             ],
             "default_check": true
@@ -800,7 +801,7 @@
                         "weekly_win": {
                             "next": [
                                 "weekly_win_in_center_enter",
-                                "weekly_win_ac_enter",
+                                "weekly_win_ac_entry",
                                 "[JumpBack]back_main_screen"
                             ],
                             "focus": "[color:Aquamarine]进入周胜子任务(低配优化)[/color]"
@@ -863,6 +864,29 @@
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            ]
+        },
+        "积分赛低配优化": {
+            "type": "switch",
+            "description": "为低配置,延迟高电脑服务,如果经常出现任务不执行,可以开启这个选项;会增加日志图片记录和减慢运行速度;从奖励中心进入",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "point_race": {
+                            "next": [
+                                "point_race_in_center_enter",
+                                "point_race_ac_entry",
+                                "[JumpBack]back_main_screen"
+                            ],
+                            "focus": "[color:Aquamarine]进入积分赛子任务(低配优化)[/color]"
                         }
                     }
                 }
@@ -952,7 +976,7 @@
                         "secret_realm": {
                             "next": [
                                 "secret_realm_in_center_enter",
-                                "secret_realm_ac_enter",
+                                "secret_realm_ac_entry",
                                 "[JumpBack]back_main_screen"
                             ],
                             "focus": "[color:Aquamarine]进入秘境子任务(低配优化)[/color]"
