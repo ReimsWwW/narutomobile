@@ -393,6 +393,16 @@
             "cases": [
                 {
                     "name": "启动火影",
+                    "pipeline_override": {
+                        "start_naruto": {
+                            "on_error": [
+                                "start_up"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "什么都不做",
                     "pipeline_override": {}
                 },
                 {
