@@ -977,6 +977,7 @@
                             "next": [
                                 "secret_realm_in_center_enter",
                                 "secret_realm_ac_entry",
+                                "secret_realm_fight",
                                 "[JumpBack]back_main_screen"
                             ],
                             "focus": "[color:Aquamarine]进入秘境子任务(低配优化)[/color]"
