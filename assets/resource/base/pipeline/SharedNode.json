@@ -114,7 +114,7 @@
         "recognition": "TemplateMatch",
         "template": "SharedNode/mask_x.png",
         "green_mask": true,
-        "threshold": 0.6,
+        "threshold": 0.68,
         "roi": [
           610,
           0,
