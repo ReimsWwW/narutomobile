@@ -3,7 +3,9 @@
         "next": [
             "ninjia_book_entry"
         ],
-        "focus": "[color:DeepSkyBlue]进入忍法帖子任务[/color]"
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]进入忍法帖任务[/color]"
     },
     "ninjia_book_entry": {
         "next": [

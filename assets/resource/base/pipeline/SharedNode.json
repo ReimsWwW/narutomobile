@@ -1,4 +1,17 @@
 {
+  "back_main_screen_before_task": {
+    "max_hit": 1,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": "back_main_screen"
+  },
+  "back_and_stop_after_task_done": {
+    "max_hit": 1,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": "back_main_screen_and_stop",
+    "focus": "任务已完成"
+  },
   "back_main_screen_and_stop": {
     "next": [
       "[JumpBack]back_main_screen",
@@ -159,11 +172,43 @@
       99,
       105
     ],
+    "threshold": 0.8,
     "method": 10001,
     "action": "Click",
     "pre_delay": 0,
     "post_delay": 0,
-    "post_wait_freezes": 300
+    "post_wait_freezes": 300,
+    "next": [
+      "[JumpBack]goto_daily_award",
+      "already_in_daily_award"
+    ]
+  },
+  "goto_daily_award": {
+    "recognition": "TemplateMatch",
+    "template": "SharedNode/check_not_in_daily_award.png",
+    "roi": [
+      37,
+      172,
+      130,
+      47
+    ],
+    "action": "Click",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "post_wait_freezes": 200
+  },
+  "already_in_daily_award": {
+    "recognition": "TemplateMatch",
+    "template": "SharedNode/check_in_daily_award.png",
+    "roi": [
+      37,
+      172,
+      130,
+      47
+    ],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "$doc": "DoNothing and JumpBack to ac entry of task"
   },
   "swipe_for_award_center_find": {
     "action": "Swipe",
@@ -550,6 +595,18 @@
     "pre_delay": 0,
     "post_delay": 0,
     "focus": "[color:tomato]战斗失败！[/color]",
+    "next": "back_main_screen_and_stop"
+  },
+  "ac_entry_mission_done": {
+    "recognition": "TemplateMatch",
+    "template": "SharedNode/center_entry_end.png",
+    "roi": [
+      180,
+      384,
+      1100,
+      118
+    ],
+    "focus": "[color:DeepSkyBlue]任务已完成[/color]",
     "next": "back_main_screen_and_stop"
   }
 }
