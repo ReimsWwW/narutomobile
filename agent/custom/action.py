@@ -210,7 +210,7 @@ class GoIntoEntryByGuide(CustomAction):
             end = [70, 200]
         else:
             logger.debug("该账号为回归账号")
-            start = [300, 500]
+            start = [300, 600]
             end = [300, 200]
             box = fast_ocr(context, expected=["忍界指引"], roi=(6, 886, 249, 173))
             if box is None:
@@ -233,7 +233,8 @@ class GoIntoEntryByGuide(CustomAction):
 
             if fast_ocr(
                 context,
-                expected=["天赋"] + enter_name,
+                # expected=["天赋"] + enter_name,
+                expected=["天赋"],
                 roi=list_roi,
                 absolutely=True,
             ):
@@ -245,7 +246,7 @@ class GoIntoEntryByGuide(CustomAction):
                 start_y=end[1],
                 end_x=start[0],
                 end_y=start[1],
-                end_hold=False,
+                end_hold=True,
             )
 
         max_sweep_attempts = 20
