@@ -243,6 +243,7 @@
         "next": [
             "team_dash_invite_ninjia",
             "[JumpBack]can_not_invite",
+            "dash_or_exit",
             "retry_failed"
         ],
         "focus": "[color:DeepSkyBlue]进入助战邀请界面[/color]"

@@ -208,10 +208,10 @@
     },
     "ninjia_book_mission_award": {
         "next": [
+            "[JumpBack]close_ninjia_book_level_up_page",
             "check_no_ninjia_book_mission_award",
             "[JumpBack]get_ninjia_book_mission_award_one_key",
-            "[JumpBack]get_ninjia_book_mission_award",
-            "[JumpBack]close_ninjia_book_level_up_page"
+            "[JumpBack]get_ninjia_book_mission_award"
         ]
     },
     "close_ninjia_book_level_up_page": {
@@ -327,10 +327,10 @@
             "Ninjia_book/liveness_undone_selected.png"
         ],
         "roi": [
-            135,
-            297,
-            64,
-            61
+            0,
+            298,
+            259,
+            197
         ],
         "green_mask": true,
         "threshold": 0.8,
