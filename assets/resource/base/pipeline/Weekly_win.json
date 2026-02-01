@@ -3,6 +3,8 @@
         "next": [
             "goto_duel_field_by_guide",
             "[JumpBack]open_ninjia_guide",
+            "[JumpBack]go_to_war",
+            "[JumpBack]weekly_win_match_fighting",
             "[JumpBack]back_main_screen"
         ],
         "pre_delay": 0,
@@ -447,20 +449,21 @@
             "Weekly_win/ban.png"
         ],
         "roi": [
-            353,
-            449,
-            587,
-            271
+            202,
+            632,
+            725,
+            87
         ],
-        "threshold": 0.6,
+        "threshold": 0.8,
         "action": "Click",
-        "post_delay": 3000,
+        "pre_delay": 0,
+        "post_delay": 0,
         "focus": "[color:DeepSkyBlue]ban忍者[/color]"
     },
     "weekly_win_rank_confirm_ninjia": {
         "recognition": "TemplateMatch",
         "template": [
-            "Weekly_win/ban.png"
+            "Weekly_win/lock.png"
         ],
         "roi": [
             788,
@@ -468,10 +471,10 @@
             492,
             200
         ],
-        "threshold": 0.6,
+        "threshold": 0.8,
         "action": "Click",
         "post_delay": 5000,
-        "focus": "[color:DeepSkyBlue]确认忍者[/color]"
+        "focus": "[color:DeepSkyBlue]锁定阵容[/color]"
     },
     "weekly_win_in_seasonal_awards": {
         "recognition": "OCR",

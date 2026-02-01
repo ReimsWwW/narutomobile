@@ -136,6 +136,9 @@
             "name": "任务集会所(beta)",
             "entry": "mission_office",
             "description": "目前仅能接三个任务,不会刷新。买了超影要拿满奖励请手动完成",
+            "option": [
+                "从奖励中心进入"
+            ],
             "default_check": true
         },
         {
@@ -248,7 +251,7 @@
             "option": [
                 "冒险副本一直推关"
             ],
-            "description": "开一直推关可能会在开荒时因为功能更新卡住,忍者不要特效太多的"
+            "description": "不会打高级关卡,忍者不要特效太多的(包括大招文字)"
         },
         {
             "name": "精英副本",
@@ -1465,7 +1468,7 @@
         },
         "冒险副本一直推关": {
             "type": "switch",
-            "description": "在不开荒的时候用这个会快一点,不过差别其实很小",
+            "description": "在不开荒的时候开启这个会快一点,但开启可能会在开荒时因为功能更新卡住",
             "cases": [
                 {
                     "name": "No",
@@ -1584,6 +1587,13 @@
                         "shugyou_no_michi": {
                             "next": [
                                 "train_road_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "mission_office": {
+                            "next": [
+                                "mission_office_in_center_enter",
                                 "[JumpBack]award_center_enter",
                                 "[JumpBack]back_main_screen_before_task"
                             ]
