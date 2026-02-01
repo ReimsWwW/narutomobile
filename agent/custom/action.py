@@ -226,14 +226,13 @@ class GoIntoEntryByGuide(CustomAction):
         # 如果等级较低还有东西没解锁就会聚焦到这里
         # 此时需要先划到最顶上
         logger.info("滑动到最顶端")
-        for _ in range(10):
+        while True:
             if context.tasker.stopping:
                 logger.info("任务停止，提前退出")
                 return CustomAction.RunResult(success=False)
 
             if fast_ocr(
                 context,
-                # expected=["天赋"] + enter_name,
                 expected=["天赋"],
                 roi=list_roi,
                 absolutely=True,
@@ -246,7 +245,7 @@ class GoIntoEntryByGuide(CustomAction):
                 start_y=end[1],
                 end_x=start[0],
                 end_y=start[1],
-                end_hold=True,
+                end_hold=False,
             )
 
         max_sweep_attempts = 20
