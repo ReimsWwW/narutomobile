@@ -91,7 +91,8 @@
             "entry": "point_race",
             "description": "领取当日奖励并尝试进行一次挑战。",
             "option": [
-                "强制战斗"
+                "强制战斗",
+                "从奖励中心进入"
             ],
             "default_check": true
         },
@@ -169,7 +170,8 @@
                 "打排位",
                 "何时退出",
                 "领取周胜奖励",
-                "清周胜过期宝箱"
+                "清周胜过期宝箱",
+                "从奖励中心进入"
             ],
             "description": "请在主页开始任务"
         },
@@ -201,6 +203,7 @@
                 "秘境翻饰品牌",
                 "秘境翻忍具牌",
                 "秘境忍具每次只翻一张",
+                "从奖励中心进入",
                 "烈炎秘境",
                 "罡体秘境",
                 "水牢秘境",
@@ -270,7 +273,8 @@
                 "百忍",
                 "绝迹战场",
                 "大蛇丸试炼",
-                "百忍是否使用连点器战斗"
+                "百忍是否使用连点器战斗",
+                "从奖励中心进入"
             ],
             "description": "需要已经适配的主题或者在决斗场页面开启任务"
         },
@@ -621,6 +625,15 @@
                     "pipeline_override": {
                         "mini_game": {
                             "next": "konoha_snack_shop"
+                        }
+                    }
+                },
+                {
+                    "name": "决斗场托管一把",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "weekly_win_match_fighting",
+                            "timeout": 10000
                         }
                     }
                 }
@@ -1569,6 +1582,7 @@
         },
         "从奖励中心进入": {
             "type": "switch",
+            "description": "开启后选项所在任务从奖励中心进入,注意确保奖励中心对应任务以及对应任务相关选项可以进入",
             "default_case": "No",
             "cases": [
                 {
@@ -1594,6 +1608,34 @@
                         "mission_office": {
                             "next": [
                                 "mission_office_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "weekly_win": {
+                            "next": [
+                                "weekly_win_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "point_race": {
+                            "next": [
+                                "point_race_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "secret_realm": {
+                            "next": [
+                                "secret_realm_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "more_gameplay": {
+                            "next": [
+                                "more_gameplay_in_center_enter",
                                 "[JumpBack]award_center_enter",
                                 "[JumpBack]back_main_screen_before_task"
                             ]
