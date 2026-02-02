@@ -913,13 +913,15 @@
                                 "[JumpBack]secret_realm_flip_has_accessory_card",
                                 "secret_realm_gear_card",
                                 "secret_realm_celebreate",
+                                "secret_realm_celebreate_1",
                                 "[JumpBack]secret_realm_win"
                             ]
                         },
                         "secret_realm_flip_gear_card": {
                             "next": [
                                 "secret_realm_win_back_secret_realm",
-                                "secret_realm_celebreate"
+                                "secret_realm_celebreate",
+                                "secret_realm_celebreate_1"
                             ]
                         }
                     }
