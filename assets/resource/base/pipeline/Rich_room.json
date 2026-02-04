@@ -87,14 +87,34 @@
             -114
         ],
         "next": [
-            "rich_room_above_kage",
-            "rich_room_without_above_kage",
+            "rich_room_in_rich_room",
             "rich_room_ac_entry_undone"
         ],
         "action": "Click",
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]丰饶之间未完成[/color]"
+    },
+    "rich_room_in_rich_room": {
+        "recognition": "OCR",
+        "expected": [
+            "丰饶",
+            "之间",
+            "可获取",
+            "大量"
+        ],
+        "roi": [
+            331,
+            335,
+            617,
+            256
+        ],
+        "next": [
+            "rich_room_above_kage",
+            "rich_room_without_above_kage"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "rich_room_without_above_kage": {
         "recognition": "TemplateMatch",
