@@ -217,7 +217,7 @@
     "recognition": "TemplateMatch",
     "template": "Weekly_win/battle_emoji.png",
     "green_mask": true,
-    "threshold": 0.7,
+    "threshold": 0.8,
     "roi": [
       0,
       224,
