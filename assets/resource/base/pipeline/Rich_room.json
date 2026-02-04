@@ -152,6 +152,7 @@
     "rich_room_above_kage_sweep": {
         "recognition": "OCR",
         "expected": [
+            "一键",
             "完成"
         ],
         "roi": [
@@ -163,13 +164,13 @@
         "action": "Click",
         "next": [
             "rich_room_confirm_above_kage_sweep",
-            "rich_room_peace",
             "rich_room_above_kage_sweep"
         ]
     },
     "rich_room_confirm_above_kage_sweep": {
         "recognition": "OCR",
         "expected": [
+            "超影",
             "免费"
         ],
         "roi": [
@@ -187,6 +188,7 @@
     "rich_room_without_confirm_above_kage_sweep": {
         "recognition": "OCR",
         "expected": [
+            "超影",
             "免费"
         ],
         "roi": [
