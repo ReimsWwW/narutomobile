@@ -276,7 +276,7 @@ class GoIntoEntryByGuide(CustomAction):
             )
 
         if box is None:
-            return CustomAction.RunResult(False)
+            return CustomAction.RunResult(success=False)
 
         if context.tasker.stopping:
             logger.info("任务停止，提前退出")
@@ -287,10 +287,10 @@ class GoIntoEntryByGuide(CustomAction):
 
         box = fast_ocr(context, ["前往"], (834, 539, 287, 149))
         if box is None:
-            return CustomAction.RunResult(False)
+            return CustomAction.RunResult(success=False)
         else:
             click(context, *box)
-            return CustomAction.RunResult(True)
+            return CustomAction.RunResult(success=True)
 
 
 @AgentServer.custom_action("CounterIncrement")
