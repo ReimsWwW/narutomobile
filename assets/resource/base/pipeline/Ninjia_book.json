@@ -233,13 +233,14 @@
         ],
         "action": "Click",
         "target": [
-            46,
-            552,
-            74,
-            64
+            35,
+            547,
+            59,
+            44
         ],
         "next": [
-            "ninjia_book_without_level_up_page"
+            "ninjia_book_without_level_up_page",
+            "close_ninjia_book_level_up_page"
         ],
         "focus": "[color:DeepSkyBlue]关闭升级界面[/color]"
     },
