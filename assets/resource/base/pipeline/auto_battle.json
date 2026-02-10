@@ -224,7 +224,7 @@
       127,
       154
     ],
-    "method": 10001,
+    // "method": 10001,
     "action": "MultiSwipe",
     "swipes": [
       {

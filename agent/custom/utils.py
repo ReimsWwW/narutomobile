@@ -3,17 +3,21 @@ from typing import Iterable
 from time import sleep
 import os
 import random
+
 from PIL import Image
+from notifypy import Notify
 from maa.context import Context
 from maa.define import RectType
-from utils.logger import logger
 
 from utils import get_format_timestamp
-from utils import bdc, root, jL, jD
-from utils.logger import log_dir
+from utils import bdc, root, jL, jD, logo
+from utils.logger import log_dir, logger
 
 
 def save_screenshot(context: Context):
+    """
+    保存截图
+    """
     # image array(BGR)
     screen_array = context.tasker.controller.cached_image
 
@@ -292,3 +296,7 @@ def nonlinear_swipe(
         },
     )
     sleep(after_swipe_delay / 1000)
+
+
+def send_notification(title: str = "系统通知", msg: str = "这是一条测试消息"):
+    Notify(title, msg, "MaaAutoNaruto", logo.__str__()).send()
