@@ -221,7 +221,8 @@ class GoIntoEntryByGuide(CustomAction):
             logger.debug("该账号为回归账号")
             start = [300, 600]
             end = [300, 300]
-            box = fast_ocr(context, expected=["忍界指引"], roi=(6, 886, 249, 173))
+            list_roi = (209, 88, 200, 580)
+            box = fast_ocr(context, expected=["忍界指引"], roi=(0, 600, 212, 120))
             if box is None:
                 return CustomAction.RunResult(success=False)
 

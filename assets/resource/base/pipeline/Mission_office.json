@@ -22,7 +22,7 @@
             "[JumpBack]ninjia_guide_to_funtion_retry"
         ],
         "post_delay": 400,
-        "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
+        "focus": "[color:DeepSkyBlue]检测是否已在忍界指引[/color]"
     },
     "check_in_mission_office": {
         "recognition": "TemplateMatch",

@@ -128,7 +128,9 @@
         "next": [
             "[JumpBack]winner_decided",
             "[JumpBack]click_All_skill",
-            "battle_tips"
+            "battle_tips",
+            "[JumpBack]go_to_war",
+            "[JumpBack]weekly_win_match_fighting"
         ],
         "timeout": 5000,
         "pre_delay": 0,

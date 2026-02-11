@@ -123,14 +123,14 @@
         ],
         "action": "Click",
         "next": [
+            "team_dash_not_in_group",
             "team_dash_my_help_undone",
             "team_dash_my_help_done",
-            "team_dash_not_in_group",
             "team_dash_group_help_undone"
         ],
         "pre_delay": 0,
         "post_delay": 0,
-        "post_wait_freezes": 600,
+        "post_wait_freezes": 400,
         "focus": "[color:DeepSkyBlue]进入组织助战[/color]"
     },
     "team_dash_not_in_group": {
@@ -481,7 +481,8 @@
         "action": "Click",
         "next": [
             "close_team_dash",
-            "close_team_dash_out_team_sign"
+            "close_team_dash_out_team_sign",
+            "check_main_screen_and_stop"
         ],
         "timeout": 2000,
         "on_error": [
