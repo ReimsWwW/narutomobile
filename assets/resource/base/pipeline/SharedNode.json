@@ -44,11 +44,11 @@
       "[JumpBack]click_next_step",
       "[JumpBack]naruto_club_x",
       "[JumpBack]christmas_stocking",
-      "[JumpBack]level_up"
+      "[JumpBack]level_up",
+      "[JumpBack]shut_social_media"
     ],
     "timeout": 5000,
     "on_error": [
-      "[JumpBack]shut_social_media",
       "retry_failed"
     ],
     "pre_delay": 0,
