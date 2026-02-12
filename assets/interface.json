@@ -59,6 +59,9 @@
         {
             "name": "排行榜",
             "entry": "leaderboard",
+            "option": [
+                "忍界指引寻找排行榜"
+            ],
             "default_check": true
         },
         {
@@ -380,6 +383,49 @@
                         "start_naruto": {
                             "on_error": [
                                 "restart_naruto"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找排行榜": {
+            "type": "select",
+            "description": "这个选项不需要操作",
+            "cases": [
+                {
+                    "name": "排行榜",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "排行榜"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "排行榜"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "leaderboard_in_leaderboard",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "排行榜"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "排行榜"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "leaderboard_in_leaderboard",
+                                "ninja_guide_returning_player_to_funtion_entry"
                             ]
                         }
                     }
