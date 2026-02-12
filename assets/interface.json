@@ -753,10 +753,10 @@
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "roi": [
-                                306,
-                                100,
-                                83,
-                                558
+                                120,
+                                68,
+                                98,
+                                585
                             ],
                             "expected": [
                                 "组织"
@@ -1097,20 +1097,9 @@
         },
         "是否领取奖励": {
             "type": "select",
+            "description": "默认不领取奖励,方便卡超影,体力,体验卡",
             "default_case": "否",
             "cases": [
-                {
-                    "name": "是",
-                    "pipeline_override": {
-                        "ninja_book_award_undone": {
-                            "next": [
-                                "ninja_book_award_selected",
-                                "[JumpBack]ninja_book_award_undone",
-                                "[JumpBack]back_main_screen_and_stop"
-                            ]
-                        }
-                    }
-                },
                 {
                     "name": "否",
                     "pipeline_override": {
@@ -1125,6 +1114,10 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "是",
+                    "pipeline_override": {}
                 }
             ]
         },
