@@ -1,7 +1,8 @@
 {
     "weekly_win": {
         "next": [
-            "goto_duel_field_by_guide",
+            "ninja_guide_returning_player",
+            "ninja_guide_in_ninja_guide",
             "[JumpBack]open_ninja_guide",
             "[JumpBack]go_to_war",
             "[JumpBack]weekly_win_match_fighting",

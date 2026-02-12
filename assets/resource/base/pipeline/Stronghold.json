@@ -1,7 +1,8 @@
 {
     "stronghold": {
         "next": [
-            "stronghold_entry",
+            "ninja_guide_returning_player",
+            "ninja_guide_in_ninja_guide",
             "[JumpBack]open_ninja_guide",
             "stronghold_in_stronghold",
             "stronghold_in_map",

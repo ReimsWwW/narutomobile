@@ -96,7 +96,8 @@
             "description": "领取当日奖励并尝试进行一次挑战。",
             "option": [
                 "强制战斗",
-                "从奖励中心进入"
+                "从奖励中心进入",
+                "忍界指引寻找积分赛"
             ],
             "default_check": true
         },
@@ -142,7 +143,8 @@
             "entry": "mission_office",
             "description": "目前仅能接三个任务,不会刷新。买了超影要拿满奖励请手动完成",
             "option": [
-                "从奖励中心进入"
+                "从奖励中心进入",
+                "忍界指引寻找任务集会所"
             ],
             "default_check": true
         },
@@ -171,6 +173,7 @@
             "name": "周胜(连点器)",
             "entry": "weekly_win",
             "option": [
+                "忍界指引寻找周胜",
                 "打排位",
                 "何时退出",
                 "领取周胜奖励",
@@ -215,7 +218,8 @@
                 "落岩秘境",
                 "毒风秘境",
                 "雷霆秘境",
-                "阴阳秘境"
+                "阴阳秘境",
+                "忍界指引寻找秘境"
             ],
             "default_check": true,
             "description": "请在主页开始任务"
@@ -255,7 +259,8 @@
                 "叛忍只显示自己",
                 "叛忍难度",
                 "叛忍开双倍",
-                "叛忍二级密码"
+                "叛忍二级密码",
+                "忍界指引寻找叛忍"
             ],
             "description": "开始测试,可以在叛忍地图打开,选项是首领功能,二级密码仅作为测试,不要填自己的"
         },
@@ -412,7 +417,7 @@
                         "ninja_guide_to_funtion_entry": {
                             "next": [
                                 "leaderboard_in_leaderboard",
-                                "ninja_guide_returning_player_to_funtion_entry"
+                                "ninja_guide_to_funtion_entry"
                             ]
                         },
                         "ninja_guide_returning_player_find_funtion_entry": {
@@ -428,6 +433,246 @@
                         "ninja_guide_returning_player_to_funtion_entry": {
                             "next": [
                                 "leaderboard_in_leaderboard",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找任务集会所": {
+            "type": "select",
+            "description": "注意这个选项你没法选择",
+            "cases": [
+                {
+                    "name": "任务集会所",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "集会所"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "集会所"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "check_in_mission_office",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "集会所"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "集会所"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "check_in_mission_office",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找积分赛": {
+            "type": "select",
+            "description": "注意这个选项你没法选择",
+            "cases": [
+                {
+                    "name": "积分赛",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "积分赛"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "积分赛"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "point_race_challenge_enter",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "积分赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "积分赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "point_race_challenge_enter",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找秘境": {
+            "type": "select",
+            "description": "注意这个选项你没法选择",
+            "cases": [
+                {
+                    "name": "秘境",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "secret_realm_create_room",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "secret_realm_create_room",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找周胜": {
+            "type": "select",
+            "description": "注意这个选项你没法选择",
+            "cases": [
+                {
+                    "name": "周胜",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "忍术对战"
+                            ],
+                            "replace": [
+                                [
+                                    "丑术",
+                                    "忍术"
+                                ],
+                                [
+                                    "双术",
+                                    "忍术"
+                                ],
+                                [
+                                    "双米",
+                                    "忍术"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "忍术对战"
+                            ],
+                            "replace": [
+                                [
+                                    "丑术",
+                                    "忍术"
+                                ],
+                                [
+                                    "双术",
+                                    "忍术"
+                                ],
+                                [
+                                    "双米",
+                                    "忍术"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]go_to_war",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "忍术对战"
+                            ],
+                            "replace": [
+                                [
+                                    "丑术",
+                                    "忍术"
+                                ],
+                                [
+                                    "双术",
+                                    "忍术"
+                                ],
+                                [
+                                    "双米",
+                                    "忍术"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "忍术对战"
+                            ],
+                            "replace": [
+                                [
+                                    "丑术",
+                                    "忍术"
+                                ],
+                                [
+                                    "双术",
+                                    "忍术"
+                                ],
+                                [
+                                    "双米",
+                                    "忍术"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]go_to_war",
                                 "ninja_guide_returning_player_to_funtion_entry"
                             ]
                         }
@@ -463,7 +708,7 @@
                                 "group_gameplay_undone",
                                 "group_gameplay_done",
                                 "no_group",
-                                "ninja_guide_returning_player_to_funtion_entry"
+                                "ninja_guide_to_funtion_entry"
                             ]
                         },
                         "ninja_guide_returning_player_find_funtion_entry": {
@@ -521,6 +766,7 @@
                             "next": [
                                 "stronghold_gameplay",
                                 "no_group",
+                                "ninja_guide_to_funtion_entry",
                                 "stronghold_entry"
                             ]
                         },
@@ -544,6 +790,7 @@
                             "next": [
                                 "stronghold_gameplay",
                                 "no_group",
+                                "ninja_guide_returning_player_to_funtion_entry",
                                 "stronghold_entry"
                             ]
                         }
@@ -578,6 +825,7 @@
                             "next": [
                                 "sky_ground_gameplay",
                                 "no_group",
+                                "ninja_guide_to_funtion_entry",
                                 "sky_ground_entry"
                             ]
                         },
@@ -601,7 +849,65 @@
                             "next": [
                                 "sky_ground_gameplay",
                                 "no_group",
+                                "ninja_guide_returning_player_to_funtion_entry",
                                 "sky_ground_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找叛忍": {
+            "type": "select",
+            "description": "注意这个选项你没法选择",
+            "cases": [
+                {
+                    "name": "叛忍",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "roi": [
+                                306,
+                                100,
+                                83,
+                                558
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "rebel_ninja_gameplay",
+                                "no_group",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "roi": [
+                                306,
+                                100,
+                                83,
+                                558
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "rebel_ninja_gameplay",
+                                "no_group",
+                                "ninja_guide_returning_player_to_funtion_entry"
                             ]
                         }
                     }
@@ -630,6 +936,26 @@
                                 "entry_name": "段位赛"
                             },
                             "focus": "[color:DeepSkyBlue]进入段位赛[/color]"
+                        },
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "段位赛"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "段位赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "段位赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "段位赛"
+                            ]
                         }
                     }
                 }

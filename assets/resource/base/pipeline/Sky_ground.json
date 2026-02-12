@@ -1,7 +1,8 @@
 {
     "sky_ground": {
         "next": [
-            "sky_ground_entry",
+            "ninja_guide_returning_player",
+            "ninja_guide_in_ninja_guide",
             "sky_ground_in_main",
             "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"

@@ -527,6 +527,7 @@
     "any_of": [
       {
         "sub_name": "图像",
+        "recognition": "TemplateMatch",
         "template": [
           "SharedNode/guide.png",
           "SharedNode/back_to_konoha.png",
@@ -539,8 +540,7 @@
           178,
           123
         ],
-        "threshold": 0.9,
-        "method": 10001
+        "threshold": 0.8
       },
       {
         "sub_name": "文字",
@@ -1031,8 +1031,7 @@
     "recognition": "OCR",
     "expected": [
       "即刻",
-      "前往",
-      "冒险"
+      "前往"
     ],
     "roi": [
       916,
