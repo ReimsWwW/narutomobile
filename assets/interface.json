@@ -174,12 +174,12 @@
             "name": "周胜(连点器)",
             "entry": "weekly_win",
             "option": [
-                "忍界指引寻找周胜",
                 "打排位",
                 "何时退出",
                 "领取周胜奖励",
                 "清周胜过期宝箱",
-                "从奖励中心进入"
+                "从奖励中心进入",
+                "忍界指引寻找周胜"
             ],
             "description": "请在主页开始任务"
         },
@@ -403,7 +403,7 @@
             "description": "注意这个选项你没法选择",
             "cases": [
                 {
-                    "name": "排行榜",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "expected": [
@@ -443,10 +443,10 @@
         },
         "忍界指引寻找任务集会所": {
             "type": "select",
-            "description": "注意这个选项你没法选择",
+            "description": "注意这个选项你没法选择,开启从奖励中心进入之后会改变进入方式",
             "cases": [
                 {
-                    "name": "任务集会所",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "expected": [
@@ -486,10 +486,10 @@
         },
         "忍界指引寻找积分赛": {
             "type": "select",
-            "description": "注意这个选项你没法选择",
+            "description": "注意这个选项你没法选择,开启从奖励中心进入之后会改变进入方式",
             "cases": [
                 {
-                    "name": "积分赛",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "expected": [
@@ -529,10 +529,10 @@
         },
         "忍界指引寻找修行之路": {
             "type": "select",
-            "description": "注意这个选项你没法选择",
+            "description": "注意这个选项你没法选择,开启从奖励中心进入之后会改变进入方式",
             "cases": [
                 {
-                    "name": "修行之路",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "expected": [
@@ -576,10 +576,10 @@
         },
         "忍界指引寻找秘境": {
             "type": "select",
-            "description": "注意这个选项你没法选择",
+            "description": "注意这个选项你没法选择,开启从奖励中心进入之后会改变进入方式",
             "cases": [
                 {
-                    "name": "秘境",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "expected": [
@@ -639,10 +639,10 @@
         },
         "忍界指引寻找周胜": {
             "type": "select",
-            "description": "注意这个选项你没法选择",
+            "description": "注意这个选项你没法选择,开启从奖励中心进入之后会改变进入方式",
             "cases": [
                 {
-                    "name": "周胜",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "expected": [
@@ -746,10 +746,10 @@
         },
         "忍界指引寻找组织": {
             "type": "select",
-            "description": "注意这个选项你没法选择",
+            "description": "注意这个选项你没法选择,开启从奖励中心进入之后会改变进入方式",
             "cases": [
                 {
-                    "name": "组织",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "roi": [
@@ -808,7 +808,7 @@
             "description": "注意这个选项你没法选择",
             "cases": [
                 {
-                    "name": "要塞",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "roi": [
@@ -867,7 +867,7 @@
             "description": "注意这个选项你没法选择",
             "cases": [
                 {
-                    "name": "天地",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "roi": [
@@ -926,7 +926,7 @@
             "description": "注意这个选项你没法选择",
             "cases": [
                 {
-                    "name": "叛忍",
+                    "name": "开",
                     "pipeline_override": {
                         "ninja_guide_find_funtion_entry": {
                             "roi": [
