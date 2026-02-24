@@ -262,12 +262,14 @@
             156,
             89
         ],
-        "threshold": 0.4,
+        "green_mask": true,
+        "threshold": 0.7,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": "[JumpBack]rich_room_combo",
-        "timeout": 3000,
-        "on_error": "rich_room_not_in_fight"
+        "next": [
+            "[JumpBack]rich_room_combo",
+            "rich_room_not_in_fight"
+        ]
     },
     "rich_room_not_in_fight": {
         "recognition": "TemplateMatch",
@@ -278,9 +280,11 @@
             156,
             89
         ],
-        "threshold": 0.4,
+        "green_mask": true,
+        "threshold": 0.7,
         "inverse": true,
         "next": [
+            "rich_room_in_fight",
             "rich_room_peace"
         ]
     },
@@ -293,7 +297,8 @@
             156,
             89
         ],
-        "threshold": 0.4,
+        "green_mask": true,
+        "threshold": 0.7,
         "action": "MultiSwipe",
         "swipes": [
             {
