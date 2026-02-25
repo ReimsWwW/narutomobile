@@ -248,6 +248,7 @@
                 "天地选择额外奖励柱子",
                 "天地挑战",
                 "玩法未开启时退出",
+                "无限循环找柱子",
                 "忍界指引寻找天地"
             ],
             "description": "非常建议不要开挑战和额外奖励柱子,如果人多会很超雄,可能导致巨大压力"
@@ -1911,6 +1912,32 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {}
+                }
+            ]
+        },
+        "无限循环找柱子": {
+            "type": "switch",
+            "description": "测试功能无限寻找空柱子,实际上会寻找UINT_MAX(4294967295)次",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "left_swipe_for_empty_column": {
+                            "max_hit": 4294967295
+                        },
+                        "right_swipe_for_empty_column": {
+                            "max_hit": 4294967295
+                        },
+                        "up_swipe_for_empty_column": {
+                            "max_hit": 4294967295
+                        },
+                        "down_swipe_for_empty_column": {
+                            "max_hit": 4294967295
+                        }
+                    }
                 }
             ]
         },
