@@ -954,7 +954,9 @@ class SecretRealmTicket(CustomRecognition):
         )
 
         if ticket_count is None:
-            logger.warning("[SecretRealmTicket] 秘境挑战卷数量识别失败,返回未通过")
+            logger.warning(
+                "[SecretRealmTicket] 秘境挑战卷数量识别失败,返回未通过,可能是挑战卷不够了"
+            )
             return CustomRecognition.AnalyzeResult(box=None, detail={})
 
         if ticket_count > 0:
