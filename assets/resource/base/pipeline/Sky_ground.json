@@ -184,6 +184,23 @@
         "post_wait_freezes": 400,
         "focus": "[color:DeepSkyBlue]天地战场结束[/color]"
     },
+    "sky_ground_not_open": {
+        "recognition": "OCR",
+        "expected": [
+            "活动开启"
+        ],
+        "roi": [
+            454,
+            485,
+            358,
+            167
+        ],
+        "next": [
+            "back_main_screen_and_stop"
+        ],
+        "post_wait_freezes": 400,
+        "focus": "[color:DeepSkyBlue]天地战场未开始[/color]"
+    },
     "sky_battlefield": {
         "recognition": "TemplateMatch",
         "template": "Sky_ground/sky_entry.png",
