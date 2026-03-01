@@ -2370,6 +2370,7 @@
                         "more_gameplay": {
                             "next": [
                                 "more_gameplay_in_center_enter",
+                                "more_gameplay_in_duel_field",
                                 "[JumpBack]award_center_enter",
                                 "[JumpBack]back_main_screen_before_task"
                             ]
