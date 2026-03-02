@@ -40,8 +40,7 @@
             "entry": "start_up",
             "option": [
                 "设置启动超时时间",
-                "启动超时后行为",
-                "账号属性"
+                "启动超时后行为"
             ],
             "description": "软件会关闭公告气泡,如果此任务总是闪退或失败可以进入游戏主界面再开启任务",
             "default_check": true
@@ -49,6 +48,10 @@
         {
             "name": "轻松助手",
             "entry": "easy_helper"
+        },
+        {
+            "name": "轻松季(beta)",
+            "entry": "easy_season"
         },
         {
             "name": "招财",
@@ -204,7 +207,7 @@
             "default_check": true
         },
         {
-            "name": "秘境(beta)",
+            "name": "秘境",
             "entry": "secret_realm",
             "option": [
                 "秘境赢几次",
@@ -230,7 +233,7 @@
             "entry": "exit_naruto"
         },
         {
-            "name": "要塞(beta)",
+            "name": "要塞",
             "entry": "stronghold",
             "option": [
                 "要塞玩法未开启时退出",
@@ -239,7 +242,7 @@
             "description": "默认前往火要塞,进其他要塞在对应要塞内开始任务"
         },
         {
-            "name": "天地(beta)",
+            "name": "天地",
             "entry": "sky_ground",
             "option": [
                 "天地选择战场",
@@ -268,7 +271,7 @@
             "description": "开始测试,可以在叛忍地图打开,选项是首领功能,二级密码仅作为测试,不要填自己的"
         },
         {
-            "name": "冒险副本(beta)",
+            "name": "冒险副本",
             "entry": "advanture",
             "option": [
                 "冒险副本一直推关"
@@ -281,12 +284,12 @@
             "description": "不是体力刷碎片的功能,这个用来开荒的,忍者不要特效太多的"
         },
         {
-            "name": "修罗副本(beta)",
+            "name": "修罗副本",
             "entry": "asura_instance",
             "description": "忍者不要特效太多的"
         },
         {
-            "name": "更多玩法(beta)",
+            "name": "更多玩法",
             "entry": "more_gameplay",
             "option": [
                 "从奖励中心进入",
