@@ -34,26 +34,74 @@
         "green_mask": true,
         "action": "Click",
         "next": [
-            "easy_season_one_key",
-            "[JumpBack]easy_season_daily"
+            "easy_season_in_easy_season"
         ],
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]进入轻松季[/color]"
     },
-    "easy_season_daily": {
+    "easy_season_in_easy_season": {
         "recognition": "TemplateMatch",
-        "template": "Easy_helper/daily.png",
+        "template": [
+            "Easy_season/easy_season_main.png"
+        ],
         "roi": [
-            423,
-            37,
-            61,
-            50
+            0,
+            0,
+            314,
+            171
+        ],
+        "next": [
+            "easy_season_one_key",
+            "easy_season_open",
+            "[JumpBack]easy_season_to_easy_helper",
+            "easy_season_not_open"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "easy_season_to_easy_helper": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/easy_helper.png",
+        "roi": [
+            0,
+            103,
+            199,
+            272
         ],
         "action": "Click",
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]点击轻松季[/color]"
+    },
+    "easy_season_open": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/easy_helper_select.png",
+        "roi": [
+            0,
+            103,
+            199,
+            272
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "easy_season_not_open": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Easy_season/easy_helper_select.png",
+            "Easy_season/easy_helper.png"
+        ],
+        "inverse": true,
+        "roi": [
+            0,
+            103,
+            199,
+            272
+        ],
+        "next": "back_main_screen_and_stop",
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "easy_season_one_key": {
         "recognition": "TemplateMatch",
@@ -142,8 +190,7 @@
         "next": [
             "easy_season_in_more",
             "easy_season_may_be_in_more",
-            "easy_season_one_key",
-            "[JumpBack]easy_season_daily"
+            "easy_season_in_easy_season"
         ],
         "timeout": 2000,
         "pre_delay": 0,
@@ -161,8 +208,7 @@
         "green_mask": true,
         "action": "Click",
         "next": [
-            "easy_season_one_key",
-            "[JumpBack]easy_season_daily",
+            "easy_season_in_easy_season",
             "easy_season_in_more",
             "easy_season_may_be_in_more"
         ],
