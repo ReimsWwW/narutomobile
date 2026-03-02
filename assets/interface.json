@@ -289,14 +289,15 @@
             "description": "忍者不要特效太多的"
         },
         {
-            "name": "更多玩法",
+            "name": "更多玩法(beta)",
             "entry": "more_gameplay",
             "option": [
                 "从奖励中心进入",
                 "百忍",
                 "绝迹战场",
                 "大蛇丸试炼",
-                "百忍是否使用连点器战斗"
+                "百忍是否使用连点器战斗",
+                "更多玩法在开战页面开始"
             ],
             "description": "需要已经适配的主题或者在决斗场页面开启任务;也可以开启从奖励中心进入"
         },
@@ -1793,6 +1794,29 @@
                     "pipeline_override": {
                         "more_gameplay_orochimaru_trial": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "更多玩法在开战页面开始": {
+            "type": "switch",
+            "description": "这个选项可以在更多玩法加载不出图片的时候用",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "more_gameplay": {
+                            "next": [
+                                "hundred_ninja_match",
+                                "more_gameplay_in_trace_vanish",
+                                "more_gameplay_in_duel_field",
+                                "[JumpBack]more_gameplay_entry",
+                                "[JumpBack]back_main_screen"
+                            ]
                         }
                     }
                 }
