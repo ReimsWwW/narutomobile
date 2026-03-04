@@ -1240,6 +1240,14 @@
                             "timeout": 10000
                         }
                     }
+                },
+                {
+                    "name": "新春邮局",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "spring_festival_post_office"
+                        }
+                    }
                 }
             ]
         },
