@@ -606,6 +606,10 @@
         ],
         "green_mask": true,
         "threshold": 0.9,
+        "next": [
+            "spring_festival_post_office_back_in_post_office_1",
+            "spring_festival_post_office_back_to_post_office_1"
+        ],
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]新春邮局抽卡已完成[/color]"
@@ -1366,12 +1370,12 @@
     },
     "spring_festival_post_office_in_cover_award": {
         "recognition": "TemplateMatch",
-        "template": "Spring_festival_post_office/award_coin.png",
+        "template": "Spring_festival_post_office/cover_award_select.png",
         "roi": [
-            459,
-            120,
-            128,
-            483
+            395,
+            184,
+            81,
+            162
         ],
         "threshold": 0.9,
         "next": [
