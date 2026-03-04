@@ -219,6 +219,7 @@
             301,
             266
         ],
+        "method": 10001,
         "threshold": 0.95,
         "action": "Click",
         "target": [
@@ -253,6 +254,7 @@
             301,
             266
         ],
+        "method": 10001,
         "threshold": 0.95,
         "action": "Click",
         "target": [
@@ -287,6 +289,7 @@
             301,
             266
         ],
+        "method": 10001,
         "threshold": 0.95,
         "action": "Click",
         "target": [
@@ -322,6 +325,7 @@
             301,
             266
         ],
+        "method": 10001,
         "threshold": 0.95,
         "action": "Click",
         "target": [
