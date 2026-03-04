@@ -233,8 +233,9 @@
             "spring_festival_post_office_green_post",
             "spring_festival_post_office_yellow_post",
             "spring_festival_post_office_end",
+            "spring_festival_post_office_endless_mode_end",
             "spring_festival_post_office_in_level_select",
-            "spring_festival_post_office_back_in_post_office"
+            "spring_festival_post_office_endless_mode_back_in_post_office"
         ],
         "pre_delay": 0,
         "post_delay": 245
@@ -266,8 +267,9 @@
             "spring_festival_post_office_green_post",
             "spring_festival_post_office_yellow_post",
             "spring_festival_post_office_end",
+            "spring_festival_post_office_endless_mode_end",
             "spring_festival_post_office_in_level_select",
-            "spring_festival_post_office_back_in_post_office"
+            "spring_festival_post_office_endless_mode_back_in_post_office"
         ],
         "pre_delay": 0,
         "post_delay": 245
@@ -299,8 +301,9 @@
             "spring_festival_post_office_red_post",
             "spring_festival_post_office_green_post",
             "spring_festival_post_office_end",
+            "spring_festival_post_office_endless_mode_end",
             "spring_festival_post_office_in_level_select",
-            "spring_festival_post_office_back_in_post_office"
+            "spring_festival_post_office_endless_mode_back_in_post_office"
         ],
         "pre_delay": 0,
         "post_delay": 245
@@ -333,8 +336,9 @@
             "spring_festival_post_office_blue_post",
             "spring_festival_post_office_red_post",
             "spring_festival_post_office_end",
+            "spring_festival_post_office_endless_mode_end",
             "spring_festival_post_office_in_level_select",
-            "spring_festival_post_office_back_in_post_office"
+            "spring_festival_post_office_endless_mode_back_in_post_office"
         ],
         "pre_delay": 0,
         "post_delay": 245
@@ -435,10 +439,10 @@
         "recognition": "TemplateMatch",
         "template": "Spring_festival_post_office/quit.png",
         "roi": [
-            318,
-            443,
-            624,
-            217
+            585,
+            498,
+            148,
+            111
         ],
         "threshold": 0.5,
         "action": "Click",
@@ -486,26 +490,47 @@
             "spring_festival_post_office_red_post",
             "spring_festival_post_office_green_post",
             "spring_festival_post_office_yellow_post",
-            "spring_festival_post_office_to_endless_mode_end",
-            "spring_festival_post_office_back_in_post_office"
+            "spring_festival_post_office_endless_mode_end",
+            "spring_festival_post_office_endless_mode_back_in_post_office"
         ],
         "pre_delay": 0,
-        "post_delay": 400
+        "post_wait_freezes": 400
     },
-    "spring_festival_post_office_to_endless_mode_end": {
+    "spring_festival_post_office_endless_mode_back_in_post_office": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Spring_festival_post_office/post_office.png",
+            "Spring_festival_post_office/post_office_night.png"
+        ],
+        "roi": [
+            567,
+            80,
+            219,
+            187
+        ],
+        "threshold": 0.9,
+        "next": [
+            "spring_festival_post_office_gacha",
+            "spring_festival_post_office_gacha_done"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 400
+    },
+    "spring_festival_post_office_endless_mode_end": {
         "recognition": "TemplateMatch",
         "template": "Spring_festival_post_office/quit.png",
         "roi": [
-            318,
-            443,
-            624,
-            217
+            713,
+            503,
+            123,
+            93
         ],
         "threshold": 0.5,
         "action": "Click",
         "next": [
-            "spring_festival_post_office_back_in_post_office",
-            "spring_festival_post_office_to_endless_mode_end"
+            "spring_festival_post_office_endless_mode_back_in_post_office",
+            "spring_festival_post_office_endless_mode_end"
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -524,7 +549,8 @@
         ],
         "action": "Click",
         "next": [
-            "spring_festival_post_office_back_in_post_office"
+            "spring_festival_post_office_back_in_post_office",
+            "spring_festival_post_office_back_to_post_office"
         ],
         "pre_delay": 0,
         "post_wait_freezes": 400
@@ -543,8 +569,7 @@
         ],
         "threshold": 0.9,
         "next": [
-            "spring_festival_post_office_gacha",
-            "spring_festival_post_office_gacha_done"
+            "spring_festival_post_office_to_endless_mode"
         ],
         "pre_delay": 0,
         "post_delay": 0
