@@ -300,9 +300,9 @@
         ],
         "next": [
             "stronghold_battle_end",
-            "stronghold_in_stronghold",
-            "[JumpBack]battle_tips",
             "[JumpBack]stronghold_click_All_skill",
+            "[JumpBack]battle_tips",
+            "stronghold_in_stronghold",
             "[JumpBack]stronghold_match_win",
             "stronghold_finished"
         ],
@@ -411,7 +411,7 @@
                     142,
                     154
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "summon",
@@ -427,7 +427,7 @@
                     54,
                     51
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "roll",
@@ -443,7 +443,7 @@
                     56,
                     55
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "attack",
@@ -459,7 +459,7 @@
                     92,
                     92
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "ultimate",
@@ -475,7 +475,7 @@
                     71,
                     65
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "skill1",
@@ -491,7 +491,7 @@
                     62,
                     54
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "skill2",
@@ -507,7 +507,7 @@
                     65,
                     59
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "sub_skill1",
@@ -523,7 +523,7 @@
                     53,
                     44
                 ],
-                "duration": 100
+                "duration": 50
             }
         ],
         "pre_delay": 0,

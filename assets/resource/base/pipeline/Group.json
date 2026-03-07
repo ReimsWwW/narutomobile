@@ -158,7 +158,9 @@
             "confirm_copper_group_pray",
             "above_kage_group_pray"
         ],
-        "post_wait_freezes": 1000,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]超影签到[/color]"
     },
     "copper_group_pray": {
@@ -175,7 +177,9 @@
             "confirm_copper_group_pray",
             "copper_group_pray"
         ],
-        "post_wait_freezes": 1000,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]铜币签到[/color]"
     },
     "confirm_copper_group_pray": {
