@@ -40,7 +40,10 @@
             "entry": "start_up",
             "option": [
                 "设置启动超时时间",
-                "启动超时后行为"
+                "启动超时后行为",
+                "允许MAN管理qq和火影信息",
+                "账号属性",
+                "拒绝qq获取火影信息"
             ],
             "description": "软件会关闭公告气泡,如果此任务总是闪退或失败可以进入游戏主界面再开启任务",
             "default_check": true
@@ -229,6 +232,20 @@
             "description": "请在主页开始任务"
         },
         {
+            "name": "切换账号(beta)",
+            "entry": "switch_account",
+            "option": [
+                "账号切换范围",
+                "目标区",
+                "目标社交媒体账号",
+                "允许MAN管理qq和火影信息",
+                "账号属性",
+                "拒绝qq获取火影信息",
+                "切换账号后行为"
+            ],
+            "description": "测试功能;微信在模拟器上登录会封微信账号,只能扫码登录,所以不支持切微信账号"
+        },
+        {
             "name": "关闭火影手游APP",
             "entry": "exit_naruto"
         },
@@ -324,6 +341,7 @@
     "option": {
         "账号属性": {
             "type": "select",
+            "description": "注意要确保自己调出的登录界面是横屏的;因为最终用户协议(EULA),你必须手动同意协议;微信在模拟器上登录会封微信账号,所以不支持切微信账号",
             "default_case": "安卓QQ",
             "cases": [
                 {
@@ -331,8 +349,120 @@
                     "pipeline_override": {}
                 },
                 {
-                    "name": "苹果",
+                    "name": "苹果QQ",
+                    "pipeline_override": {
+                        "switch_account_switch_social_media_account": {
+                            "template": "SharedNode/ios_qq_login.png",
+                            "roi": [
+                                755,
+                                501,
+                                108,
+                                81
+                            ]
+                        },
+                        "start_up_switch_social_media_account": {
+                            "template": "SharedNode/ios_qq_login.png",
+                            "roi": [
+                                755,
+                                501,
+                                108,
+                                81
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "微信",
+                    "pipeline_override": {
+                        "switch_account_already_in_target_area": {
+                            "enabled": true
+                        },
+                        "switch_account_in_before_game": {
+                            "next": "switch_account_to_switch_area"
+                        },
+                        "check_agreement": {
+                            "next": "switch_account_switch_social_media_account"
+                        }
+                    }
+                }
+            ]
+        },
+        "允许MAN管理qq和火影信息": {
+            "type": "switch",
+            "description": "开启后man默认会自动帮你同意:火影获取qq信息,qq获取火影信息;如需要提前选择所有人不可见",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "agree_log_in": {
+                            "enabled": false
+                        },
+                        "agree_info": {
+                            "enabled": false
+                        },
+                        "refuse_info": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "agree_log_in": {
+                            "enabled": true
+                        },
+                        "agree_info": {
+                            "enabled": true
+                        },
+                        "refuse_info": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "拒绝qq获取火影信息": {
+            "type": "switch",
+            "description": "开启允许MAN管理qq和火影信息才会生效;在qq申请界面,拒绝qq获取火影信息",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "No",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "before_game": {
+                            "next": [
+                                "click_start_game",
+                                "[JumpBack]start_up_loading",
+                                "[JumpBack]close_teenager_page",
+                                "[JumpBack]agree_log_in",
+                                "[JumpBack]refuse_info",
+                                "check_agreement",
+                                "agree_agreement",
+                                "agreement_not_agree"
+                            ]
+                        },
+                        "start_up_switch_social_media_account": {
+                            "next": [
+                                "click_start_game",
+                                "[JumpBack]start_up_loading",
+                                "[JumpBack]close_teenager_page",
+                                "[JumpBack]agree_log_in",
+                                "[JumpBack]refuse_info"
+                            ]
+                        },
+                        "switch_account_find_target_qq_account": {
+                            "next": [
+                                "switch_account_to_switch_area",
+                                "[JumpBack]agree_log_in",
+                                "[JumpBack]refuse_info"
+                            ]
+                        }
+                    }
                 }
             ]
         },
@@ -1739,6 +1869,93 @@
                             "next": [
                                 "secret_realm_yin_yang_to_place"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "账号切换范围": {
+            "type": "select",
+            "description": "因为最终用户协议(EULA),换社交媒体账号时,你必须手动同意协议;",
+            "cases": [
+                {
+                    "name": "换区"
+                },
+                {
+                    "name": "换社交媒体账号",
+                    "pipeline_override": {
+                        "switch_account_already_in_target_area": {
+                            "enabled": false
+                        },
+                        "switch_account_in_before_game": {
+                            "next": "switch_account_to_switch_social_media_account"
+                        },
+                        "check_agreement": {
+                            "next": "switch_account_switch_social_media_account"
+                        }
+                    }
+                }
+            ]
+        },
+        "目标区": {
+            "type": "input",
+            "description": "需要切换的目标区",
+            "inputs": [
+                {
+                    "name": "区序号",
+                    "label": "区序号",
+                    "description": "需要切换的目标区的区序号",
+                    "pipeline_type": "string",
+                    "default": "521",
+                    "verify": "^([1-9]\\d{0,4}|100000)$"
+                }
+            ],
+            "pipeline_override": {
+                "switch_account_already_in_target_area": {
+                    "expected": [
+                        "{区序号}"
+                    ]
+                },
+                "switch_account_find_target_area": {
+                    "expected": [
+                        "{区序号}"
+                    ]
+                }
+            }
+        },
+        "目标社交媒体账号": {
+            "type": "input",
+            "description": "需要切换的目标社交媒体账号,字串即可,注意可能因为OCR识别不到而失败",
+            "inputs": [
+                {
+                    "name": "账号名",
+                    "label": "账号名",
+                    "description": "需要切换的目标账号的账号名",
+                    "pipeline_type": "string",
+                    "default": "MaaAutoNaruto"
+                }
+            ],
+            "pipeline_override": {
+                "switch_account_find_target_qq_account": {
+                    "expected": [
+                        "{账号名}"
+                    ]
+                }
+            }
+        },
+        "切换账号后行为": {
+            "type": "select",
+            "description": "切换后行为的行为;开启点击开始游戏后,切换账号之后的任务不需要进入火影任务",
+            "cases": [
+                {
+                    "name": "点击开始游戏"
+                },
+                {
+                    "name": "什么都不做",
+                    "pipeline_override": {
+                        "switch_account_in_start_game": {
+                            "action": "StopTask",
+                            "next": []
                         }
                     }
                 }
