@@ -389,7 +389,7 @@
             1114,
             140
         ],
-        "threshold": 0.9,
+        "threshold": 0.85,
         "next": [
             "easy_season_plus_get_energy"
         ],
