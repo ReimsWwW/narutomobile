@@ -40,6 +40,8 @@
         "next": [
             "back_main_screen_and_stop"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "focus": "[color:DeepSkyBlue]没有加入组织[/color]"
     },
     "group_gameplay_undone": {
@@ -58,6 +60,7 @@
             "group_gameplay_undone"
         ],
         "threshold": 0.9,
+        "pre_delay": 0,
         "post_delay": 400,
         "focus": "[color:DeepSkyBlue]组织玩法未完成[/color]"
     },
@@ -91,6 +94,8 @@
             "goto_group_pray",
             "check_selected_group_gameplay"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]确认选中组织玩法按钮[/color]"
     },
