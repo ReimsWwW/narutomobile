@@ -67,7 +67,7 @@
             "[JumpBack]agree_info",
             "check_agreement",
             "agree_agreement",
-            "agreement_not_agree"
+            "[JumpBack]agreement_not_agree"
         ],
         "on_error": [
             "start_up"
@@ -359,7 +359,6 @@
             120,
             81
         ],
-        "action": "StopTask",
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:tomato]由于最终用户协议(EULA),你必须手动同意协议[/color]"
