@@ -185,7 +185,8 @@
                 "何时退出",
                 "领取周胜奖励",
                 "清周胜过期宝箱",
-                "从奖励中心进入"
+                "从奖励中心进入",
+                "出现提示时重启任务"
             ],
             "description": "请在主页开始任务,请尽量不要滥用这个功能影响其他人游戏体验"
         },
@@ -1588,6 +1589,52 @@
                             "next": [
                                 "weekly_win_check_daily_duel_mission_recover_award",
                                 "back_main_screen_and_stop"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "出现提示时重启任务": {
+            "type": "switch",
+            "description": "在遇到对手退出,获取不到房间的时候尝试重启任务,开启会降低应对卡顿的能力",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "team_dash_invite_page": {
+                            "weekly_win": {
+                                "next": [
+                                    "ninja_guide_returning_player",
+                                    "ninja_guide_in_ninja_guide",
+                                    "[JumpBack]open_ninja_guide",
+                                    "[JumpBack]go_to_war",
+                                    "[JumpBack]weekly_win_match_fighting",
+                                    "[JumpBack]back_main_screen"
+                                ]
+                            }
+                        },
+                        "go_to_war": {
+                            "next": [
+                                "cannot_go_to_war",
+                                "[JumpBack]weekly_win_match_fighting",
+                                "[JumpBack]weekly_win_rank_matching",
+                                "[JumpBack]weekly_win_rank_confirm_ninja",
+                                "[JumpBack]weekly_win_rank_ban",
+                                "battle_tips",
+                                "[JumpBack]weekly_win_rank_up",
+                                "[JumpBack]battle_again",
+                                "[JumpBack]weekly_win_substitution",
+                                "[JumpBack]go_to_war"
+                            ]
+                        },
+                        "tips_confirm": {
+                            "next": [
+                                "tips_confirm",
+                                "weekly_win"
                             ]
                         }
                     }
