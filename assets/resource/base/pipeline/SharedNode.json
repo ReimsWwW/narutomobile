@@ -854,7 +854,8 @@
       285
     ],
     "next": [
-      "ninja_guide_returning_player_to_ninja_guide"
+      "ninja_guide_returning_player_to_ninja_guide",
+      "ninja_guide_returning_player_in_ninja_guide"
     ],
     "pre_delay": 0,
     "post_delay": 0,
