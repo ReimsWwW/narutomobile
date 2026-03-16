@@ -260,19 +260,31 @@
     "share_close_weekly_ninja_title_next_step": {
         "recognition": "TemplateMatch",
         "template": "Share/weekly_ninja_title_next_step.png",
+        "roi": [
+            402,
+            550,
+            528,
+            169
+        ],
+        "action": "Click",
         "pre_delay": 0,
         "post_delay": 0,
         "post_wait_freezes": 200,
-        "action": "Click",
         "focus": "[color:darkgray]关闭周榜更新下一步提示[/color]"
     },
     "share_close_weekly_ninja_title": {
         "recognition": "TemplateMatch",
         "template": "Share/weekly_ninja_title.png",
+        "roi": [
+            224,
+            560,
+            819,
+            160
+        ],
+        "action": "Click",
         "pre_delay": 0,
         "post_delay": 0,
         "post_wait_freezes": 200,
-        "action": "Click",
         "focus": "[color:darkgray]关闭周榜更新提示[/color]"
     }
 }
