@@ -1064,5 +1064,29 @@
     "pre_delay": 0,
     "post_delay": 0,
     "focus": "[color:DeepSkyBlue]功能还没解锁[/color]"
+  },
+  "shell_volume_up": {
+    "action": "Shell",
+    "cmd": "input keyevent 24"
+  },
+  "shell_volume_down": {
+    "action": "Shell",
+    "cmd": "input keyevent 25"
+  },
+  "shell_mute_and_unmute": {
+    "action": "Shell",
+    "cmd": "input keyevent 164"
+  },
+  "shell_back": {
+    "action": "Shell",
+    "cmd": "input keyevent 4"
+  },
+  "shell_home": {
+    "action": "Shell",
+    "cmd": "input keyevent 3"
+  },
+  "shell_enter": {
+    "action": "Shell",
+    "cmd": "input keyevent 66"
   }
 }

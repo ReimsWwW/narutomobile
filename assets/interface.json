@@ -54,7 +54,13 @@
         },
         {
             "name": "轻松季(beta)",
-            "entry": "easy_season"
+            "entry": "easy_season",
+            "option": [
+                "轻松季扫荡秘境",
+                "秘境翻饰品牌",
+                "秘境翻忍具牌",
+                "秘境忍具每次只翻一张"
+            ]
         },
         {
             "name": "招财",
@@ -546,6 +552,42 @@
                         "start_naruto": {
                             "on_error": [
                                 "restart_naruto"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "轻松季扫荡秘境": {
+            "type": "switch",
+            "description": "轻松季领取扫荡卡,并扫荡",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "easy_season_plus_energy_done": {
+                            "next": [
+                                "easy_season_plus_sweep_card",
+                                "easy_season_plus_back_to_easy_season_plus",
+                                "back_main_screen_and_stop"
+                            ]
+                        },
+                        "secret_realm_celebreate": {
+                            "next": [
+                                "secret_realm_celebreate",
+                                "secret_realm_celebreate_1",
+                                "easy_season_plus_back_to_easy_season_plus"
+                            ]
+                        },
+                        "secret_realm_celebreate_1": {
+                            "next": [
+                                "secret_realm_celebreate",
+                                "secret_realm_celebreate_1",
+                                "easy_season_plus_back_to_easy_season_plus"
                             ]
                         }
                     }
