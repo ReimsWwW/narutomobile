@@ -165,19 +165,21 @@
     },
     "ninja_book_close_share_top_bar": {
         "recognition": "TemplateMatch",
-        "template": "SharedNode/top_bar.png",
+        "template": "Ninja_book/top_bar.png",
         "roi": [
             1165,
             0,
             114,
             78
         ],
+        "action": "Click",
         "target": [
             1067,
             0,
             213,
             143
         ],
+        "green_mask": true,
         "threshold": 0.9,
         "max_hit": 5,
         "next": [
@@ -185,6 +187,7 @@
             "[JumpBack]ninja_book_mission_undone",
             "[JumpBack]ninja_book_mission_done",
             "ninja_book_close_share",
+            "ninja_book_quit_x",
             "ninja_book_close_share_top_bar",
             "ninja_book_share_without_x"
         ],
