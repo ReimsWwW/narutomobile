@@ -118,7 +118,8 @@
         "action": "StopApp",
         "package": "com.tencent.mobileqq",
         "next": [
-            "ninja_book_close_share_top_bar"
+            "ninja_book_close_share_top_bar",
+            "ninja_book_quit_x"
         ],
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 1000,
@@ -149,7 +150,13 @@
         "action": "StopApp",
         "package": "com.tencent.mm",
         "next": [
-            "ninja_book_close_share_top_bar"
+            "ninja_book_quit_x",
+            "ninja_book_close_share_top_bar",
+            "close_ninja_book_leaderboard",
+            "[JumpBack]ninja_book_mission_undone",
+            "[JumpBack]ninja_book_mission_done",
+            "ninja_book_close_share",
+            "ninja_book_share_without_x"
         ],
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 1000,
@@ -157,15 +164,43 @@
         "focus": "[color:DeepSkyBlue]关闭分享[/color]"
     },
     "ninja_book_close_share_top_bar": {
-        "recognition": "DirectHit",
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/top_bar.png",
+        "roi": [
+            1165,
+            0,
+            114,
+            78
+        ],
         "target": [
             1067,
             0,
             213,
             143
         ],
-        "action": "Click",
+        "threshold": 0.9,
         "max_hit": 5,
+        "next": [
+            "close_ninja_book_leaderboard",
+            "[JumpBack]ninja_book_mission_undone",
+            "[JumpBack]ninja_book_mission_done",
+            "ninja_book_close_share",
+            "ninja_book_close_share_top_bar",
+            "ninja_book_share_without_x"
+        ],
+        "focus": "[color:DeepSkyBlue]关闭顶部栏[/color]"
+    },
+    "ninja_book_quit_x": {
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/green_masked_x.png",
+        "green_mask": true,
+        "threshold": 0.6,
+        "roi": [
+            610,
+            0,
+            670,
+            229
+        ],
         "next": [
             "close_ninja_book_leaderboard",
             "[JumpBack]ninja_book_mission_undone",
@@ -174,7 +209,8 @@
             "[JumpBack]ninja_book_close_share_top_bar",
             "ninja_book_share_without_x"
         ],
-        "focus": "[color:DeepSkyBlue]关闭顶部栏[/color]"
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "ninja_book_share_without_x": {
         "recognition": "TemplateMatch",
