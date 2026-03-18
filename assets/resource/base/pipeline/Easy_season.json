@@ -487,8 +487,22 @@
         "action": "Click",
         "next": [
             "easy_season_plus_get_sweep_card",
+            "[JumpBack]easy_season_plus_one_key_get_sweep_card",
             "easy_season_plus_close_claim_interface"
         ],
+        "pre_delay": 0,
+        "post_delay": 200
+    },
+    "easy_season_plus_one_key_get_sweep_card": {
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/one_key_get.png",
+        "roi": [
+            385,
+            385,
+            259,
+            153
+        ],
+        "action": "Click",
         "pre_delay": 0,
         "post_delay": 200
     },
@@ -629,7 +643,8 @@
                     476,
                     1088,
                     37
-                ]
+                ],
+                "threshold": 0.9
             },
             {
                 "sub_name": "无扫荡卡",
@@ -642,7 +657,8 @@
                     476,
                     1088,
                     37
-                ]
+                ],
+                "threshold": 0.9
             }
         ],
         "next": [
