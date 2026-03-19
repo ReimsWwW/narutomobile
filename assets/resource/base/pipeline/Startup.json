@@ -303,7 +303,7 @@
         "next": [
             "check_agreement",
             "agree_agreement",
-            "agreement_not_agree"
+            "[JumpBack]agreement_not_agree"
         ],
         "pre_delay": 0,
         "post_delay": 0
