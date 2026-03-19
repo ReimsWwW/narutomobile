@@ -222,7 +222,7 @@ def main():
         extract_path = program_dir / "deps"
         # 解压时跳过schema.json文件
         for member in zip_ref.infolist():
-            if member.filename.endswith('schema.json'):
+            if member.filename.endswith("schema.json"):
                 print(f"跳过文件: {member.filename}")
                 continue
             zip_ref.extract(member, extract_path)
