@@ -589,14 +589,32 @@
         ],
         "action": "Click",
         "next": [
-            "treasure_box_access_method_undone",
-            "treasure_box_access_method_done",
+            "treasure_box_in_treasure_box",
             "[JumpBack]treasure_box_undone"
         ],
         "pre_delay": 0,
         "post_delay": 0,
         "post_wait_freezes": 500,
         "focus": "[color:DeepSkyBlue]宝匣未领取[/color]"
+    },
+    "treasure_box_in_treasure_box": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "SharedNode/finger_pointing.png"
+        ],
+        "roi": [
+            906,
+            641,
+            373,
+            78
+        ],
+        "green_mask": true,
+        "next": [
+            "treasure_box_access_method_undone",
+            "treasure_box_access_method_done"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "treasure_box_access_method_done": {
         "recognition": "TemplateMatch",
@@ -698,10 +716,8 @@
         "focus": "[color:DeepSkyBlue]检查还有没有宝匣奖励[/color]"
     },
     "get_treasure_box_award_one_key": {
-        "recognition": "OCR",
-        "expected": [
-            "确定"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/one_key_get.png",
         "roi": [
             363,
             335,
@@ -719,10 +735,8 @@
         "focus": "[color:DeepSkyBlue]一键领取宝匣奖励[/color]"
     },
     "get_treasure_box_award_without_one_key": {
-        "recognition": "OCR",
-        "expected": [
-            "确定"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/one_key_get.png",
         "roi": [
             363,
             335,

@@ -56,7 +56,7 @@
             "name": "轻松季(beta)",
             "entry": "easy_season",
             "option": [
-                "轻松季扫荡秘境",
+                "轻松季扫荡",
                 "秘境翻饰品牌",
                 "秘境翻忍具牌",
                 "秘境忍具每次只翻一张"
@@ -559,7 +559,7 @@
                 }
             ]
         },
-        "轻松季扫荡秘境": {
+        "轻松季扫荡": {
             "type": "switch",
             "description": "轻松季领取扫荡卡,并扫荡",
             "default_case": "No",
@@ -570,6 +570,12 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
+                        "easy_season_plus_end": {
+                            "next": [
+                                "easy_season_plus_end_to_easy_helper",
+                                "back_main_screen_and_stop"
+                            ]
+                        },
                         "easy_season_plus_energy_done": {
                             "next": [
                                 "easy_season_plus_sweep_card",
@@ -1410,11 +1416,6 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "check_no_treasure_box_award": {
-                            "next": [
-                                "treasure_box_challenge"
-                            ]
-                        },
                         "treasure_box_undone": {
                             "expected": [
                                 "礼"
