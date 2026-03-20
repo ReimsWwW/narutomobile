@@ -688,6 +688,7 @@
         "action": "Click",
         "next": [
             "[JumpBack]get_treasure_box_award_one_key",
+            "get_treasure_box_award",
             "check_no_treasure_box_award"
         ],
         "pre_delay": 0,
@@ -1018,7 +1019,7 @@
             "[JumpBack]ninja_book_leaderboard"
         ],
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 100,
         "post_wait_freezes": 200,
         "focus": "[color:DeepSkyBlue]进入忍法帖排行榜界面[/color]"
     },
