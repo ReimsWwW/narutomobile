@@ -177,7 +177,8 @@
                 "是否领取奖励",
                 "分享后直接返回游戏",
                 "跳过分享",
-                "宝匣挑战"
+                "宝匣挑战",
+                "忍法帖礼盒"
             ],
             "description": "[size:15][color:tomato]开启后会领取忍法帖升级的全部奖励，需要攒体验卡的不要用！[/color][/size]",
             "default_check": true
@@ -1393,6 +1394,41 @@
                         "check_no_treasure_box_award": {
                             "next": [
                                 "treasure_box_challenge"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍法帖礼盒": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "check_no_treasure_box_award": {
+                            "next": [
+                                "treasure_box_challenge"
+                            ]
+                        },
+                        "treasure_box_undone": {
+                            "expected": [
+                                "礼"
+                            ]
+                        },
+                        "ninja_book_check_in_treasure_box_access_method": {
+                            "expected": [
+                                "每日活跃度"
+                            ],
+                            "roi": [
+                                550,
+                                125,
+                                118,
+                                41
                             ]
                         }
                     }
