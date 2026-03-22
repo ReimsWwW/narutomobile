@@ -1687,17 +1687,15 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "team_dash_invite_page": {
-                            "weekly_win": {
-                                "next": [
-                                    "ninja_guide_returning_player",
-                                    "ninja_guide_in_ninja_guide",
-                                    "[JumpBack]open_ninja_guide",
-                                    "[JumpBack]go_to_war",
-                                    "[JumpBack]weekly_win_match_fighting",
-                                    "[JumpBack]back_main_screen"
-                                ]
-                            }
+                        "weekly_win": {
+                            "next": [
+                                "ninja_guide_returning_player",
+                                "ninja_guide_in_ninja_guide",
+                                "[JumpBack]open_ninja_guide",
+                                "[JumpBack]go_to_war",
+                                "[JumpBack]weekly_win_match_fighting",
+                                "[JumpBack]back_main_screen"
+                            ]
                         },
                         "go_to_war": {
                             "next": [
@@ -1707,6 +1705,7 @@
                                 "[JumpBack]weekly_win_rank_confirm_ninja",
                                 "[JumpBack]weekly_win_rank_ban",
                                 "battle_tips",
+                                "[JumpBack]weekly_win_locked",
                                 "[JumpBack]weekly_win_rank_up",
                                 "[JumpBack]battle_again",
                                 "[JumpBack]weekly_win_substitution",

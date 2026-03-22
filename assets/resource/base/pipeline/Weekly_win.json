@@ -387,6 +387,7 @@
             "[JumpBack]weekly_win_rank_confirm_ninja",
             "[JumpBack]weekly_win_rank_ban",
             "[JumpBack]battle_tips",
+            "[JumpBack]weekly_win_locked",
             "[JumpBack]weekly_win_rank_up",
             "[JumpBack]battle_again",
             "[JumpBack]weekly_win_substitution",
@@ -396,6 +397,18 @@
         "post_delay": 1000,
         "timeout": 40000,
         "focus": "[color:DeepSkyBlue]点击开战[/color]"
+    },
+    "weekly_win_locked": {
+        "recognition": "TemplateMatch",
+        "template": "Weekly_win/locked.png",
+        "roi": [
+            928,
+            558,
+            74,
+            79
+        ],
+        "pre_delay": 0,
+        "post_delay": 2000
     },
     "cannot_go_to_war": {
         "recognition": "OCR",
