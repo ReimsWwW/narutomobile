@@ -138,7 +138,7 @@
             "[JumpBack]go_to_war",
             "[JumpBack]weekly_win_match_fighting"
         ],
-        "timeout": 5000,
+        "timeout": 10000,
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]开始战斗[/color]"

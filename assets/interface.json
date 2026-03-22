@@ -322,6 +322,8 @@
                 "百忍",
                 "绝迹战场",
                 "大蛇丸试炼",
+                "打满奖励停止",
+                "打满奖励停止并领取奖励",
                 "百忍是否使用连点器战斗",
                 "更多玩法在开战页面开始"
             ],
@@ -1869,7 +1871,7 @@
             ]
         },
         "秘境忍具每次只翻一张": {
-            "description": "性价比选项",
+            "description": "性价比选项,只有开启了翻忍具牌选项才生效",
             "type": "switch",
             "cases": [
                 {
@@ -2287,6 +2289,46 @@
                             "enabled": false
                         }
                     }
+                }
+            ]
+        },
+        "打满奖励停止": {
+            "type": "switch",
+            "description": "还没适配百忍",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "more_gameplay_go_fight": {
+                            "action": "DoNothing",
+                            "next": [
+                                "more_gameplay_check_point"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No"
+                }
+            ]
+        },
+        "打满奖励停止并领取奖励": {
+            "type": "switch",
+            "description": "还没适配百忍",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "more_gameplay_complete": {
+                            "next": [
+                                "more_gameplay_award",
+                                "more_gameplay_award_done"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No"
                 }
             ]
         },
