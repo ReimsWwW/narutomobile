@@ -308,6 +308,7 @@
             222,
             98
         ],
+        "action": "Click",
         "next": [
             "more_gameplay_get_award_one_key",
             "more_gameplay_award_done"
@@ -363,6 +364,7 @@
         "action": "Click",
         "next": [
             "more_gameplay_trace_vanish_in_match",
+            "more_gameplay_trace_vanish_confirm_fight",
             "more_gameplay_check_back_fight"
         ],
         "pre_delay": 0,
