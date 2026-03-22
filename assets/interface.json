@@ -1715,6 +1715,7 @@
                         "tips_confirm": {
                             "next": [
                                 "tips_confirm",
+                                "[JumpBack]weekly_win_rank_up",
                                 "weekly_win"
                             ]
                         }
