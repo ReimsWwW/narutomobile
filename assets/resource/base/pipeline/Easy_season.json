@@ -375,6 +375,41 @@
         "post_delay": 0,
         "post_wait_freezes": 200
     },
+    "easy_season_plus_end_to_easy_share": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Easy_season/share.png"
+        ],
+        "roi": [
+            0,
+            103,
+            199,
+            272
+        ],
+        "action": "Click",
+        "next": [
+            "easy_season_plus_end_in_easy_share",
+            "easy_season_plus_end_to_easy_share"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 200
+    },
+    "easy_season_plus_end_in_easy_share": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/share_select.png",
+        "roi": [
+            0,
+            103,
+            199,
+            272
+        ],
+        "next": [
+            "easy_season_plus_end_to_easy_season"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
     "easy_season_plus_end_in_easy_helper": {
         "recognition": "TemplateMatch",
         "template": "Easy_season/easy_helper_select.png",
@@ -672,6 +707,7 @@
             -8
         ],
         "next": [
+            "easy_season_plus_secret_realm_can_not_sweep",
             "secret_realm_win",
             "secret_realm_celebreate",
             "secret_realm_celebreate_1",
@@ -679,7 +715,28 @@
             "easy_season_plus_find_sweep_card_event"
         ],
         "pre_delay": 0,
-        "post_delay": 300
+        "post_delay": 200
+    },
+    "easy_season_plus_secret_realm_can_not_sweep": {
+        "recognition": "OCR",
+        "expected": [
+            "不足"
+        ],
+        "roi": [
+            483,
+            332,
+            318,
+            51
+        ],
+        "next": [
+            "easy_season_plus_team_sweep_card_event_done",
+            "easy_season_plus_find_team_sweep_card_event",
+            "easy_season_plus_complete",
+            "[JumpBack]swipe_for_easy_season_plus_find_team_sweep_card_event",
+            "back_main_screen_and_stop"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "swipe_for_easy_season_plus_find_sweep_card_event": {
         "recognition": "TemplateMatch",
