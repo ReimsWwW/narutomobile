@@ -1542,6 +1542,14 @@
                             "next": "spring_festival_post_office"
                         }
                     }
+                },
+                {
+                    "name": "问答游戏(挂机)",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "konoha_question_and_answer"
+                        }
+                    }
                 }
             ]
         },
